@@ -1,13 +1,13 @@
 import { Button } from '@chakra-ui/react';
 
-const Btn = ({ text, styles = null, icon = null }) => {
+const Btn = ({ text, style = null, icon = null }) => {
   return (
     <Button
-      h={50}
+      minW={'80px'}
       leftIcon={icon}
-      style={{ ...styles }}
+      style={{ ...style }}
       variant="solid"
-      p="1.3em 3em"
+      p="0 15px"
       fontSize="12px"
       textTransform="uppercase"
       // bgImage={'linear-gradient(145deg, #11998e 0%, #38ef7d 100%)'}
