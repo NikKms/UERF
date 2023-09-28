@@ -1,15 +1,13 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, theme } from '@chakra-ui/react'
 import { BrowserRouter as Router } from "react-router-dom";
 import Layout from './components/Layout';
 import Routings from './router/Routings';
-
+import './i18n'
 
 function App() {
 
-  console.log("HELLO")
-
   return (
-    <ChakraProvider >
+    <ChakraProvider theme={theme} >
       <Router>
         <Layout>
           <Routings />

@@ -2,6 +2,7 @@ import Nav from '../Nav/Nav';
 import logoSvg from '../../assets/svg/logo.svg';
 
 import { Box, Container } from '@chakra-ui/react';
+import LangSelect from '../LangSelect/LangSelect';
 
 const Header = () => {
   return (
@@ -19,6 +20,7 @@ const Header = () => {
         </Box>
 
         <Nav />
+        <LangSelect />
       </Container>
     </Box>
   );

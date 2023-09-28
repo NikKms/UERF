@@ -1,16 +1,16 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <Flex gap={10}>
-      <Box>
+    <Box as="ul">
+      <Box as="li">
         <Link to="/">Home</Link>
       </Box>
-      <Box>
+      <Box as="li">
         <Link to="/events">Events</Link>
       </Box>
-    </Flex>
+    </Box>
   );
 };
 
