@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
+import LangSelect from "../LangSelect/LangSelect";
 
 const Nav = () => {
     return <Box as='ul'>
@@ -10,6 +11,8 @@ const Nav = () => {
         <Box as='li'>
             <Link to='/events'>Events</Link>
         </Box>
+
+        <LangSelect />
     </Box>;
 };
 
