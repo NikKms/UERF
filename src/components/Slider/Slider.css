@@ -33,5 +33,5 @@
   transform: scale(1);
   transition: all 2000ms, filter 2000ms ease-in-out;
 
-  filter: brightness(40%);
+  filter: brightness(60%);
 }

@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       {/* <Meta /> */}
       <Flex wrap="wrap" minHeight="90vh">
         <Header />
-        <Box width="full" as="main" marginY={22}>
+        <Box width="full" as="main">
           {children}
         </Box>
         <Footer />
