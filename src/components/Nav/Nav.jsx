@@ -1,16 +1,21 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import Btn from '../Btn/Btn';
 
 const Nav = () => {
   return (
-    <Box as="ul">
+    <Flex as="ul" gap={5} listStyleType="none">
       <Box as="li">
-        <Link to="/">Home</Link>
+        <Link to="/">
+          <Btn text={'Home'} />
+        </Link>
       </Box>
       <Box as="li">
-        <Link to="/events">Events</Link>
+        <Link to="/events">
+          <Btn text={'Events'} />
+        </Link>
       </Box>
-    </Box>
+    </Flex>
   );
 };
 
