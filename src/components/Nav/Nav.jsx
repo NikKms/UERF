@@ -16,7 +16,9 @@ const Nav = () => {
         </Link>
       </Box>
       <Box as="li">
-        <Link to="/about">About</Link>
+        <Link to="/about">
+          <Btn text={'About'} />
+        </Link>
       </Box>
     </Flex>
   );
