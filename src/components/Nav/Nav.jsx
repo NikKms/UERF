@@ -15,6 +15,11 @@ const Nav = () => {
           <Btn text={'Events'} />
         </Link>
       </Box>
+      <Box as="li">
+        <Link to="/about">
+          <Btn text={'About'} />
+        </Link>
+      </Box>
     </Flex>
   );
 };
