@@ -10,7 +10,7 @@ const Hero = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <section style={{ position: 'relative' }}>
+    <section style={{ position: 'relative', overflow: 'hidden' }}>
       <Box pos="absolute" zIndex="2" top="55%" left="5%">
         <Text as="h2" fontSize="38px" fontWeight="700" mb="5" color="#fff">
           Join forum, save the Earth!
