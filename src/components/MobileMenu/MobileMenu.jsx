@@ -34,10 +34,16 @@ const MobileMenu = ({ isOpen, onOpen, onClose }) => {
           }
           pt="17px"
           pr="13px"
+          overflow="hidden"
         >
           <MobileBtn onClick={onClose} isOpen={isOpen} />
 
-          <DrawerBody display={'flex'} justifyContent={'center'} pt="100px">
+          <DrawerBody
+            display={'flex'}
+            justifyContent={'center'}
+            pt="100px"
+            overflow="hidden"
+          >
             <NavBar onClick={onClose} flexDir={'column'} />
           </DrawerBody>
 
