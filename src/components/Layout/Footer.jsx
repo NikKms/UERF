@@ -1,46 +1,59 @@
-import { Box, Container } from '@chakra-ui/react';
+import { Box, Container, Text } from '@chakra-ui/react';
 import React from 'react';
-import bg from '../../assets/img/footer-bg.jpg'
+import logoSvg from '../../assets/svg/logo.svg';
 import FooterAbout from '../FooterAbout/FooterAbout';
-import FooterGallery from '../FooterGallery/FooterGallery';
-import LangSelect from '../LangSelect/LangSelect';
+import NavBar from '../NavBar/NavBar';
+import logoSvgEn from '../../assets/svg/logo_en.svg';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const { i18n } = useTranslation();
+  const gradient = 'linear-gradient(0deg, #0b1731, #48b0b0)';
+
   return (
-    <Box as='footer'
-      width='full'
-      minH='150px'
+    <Box
+      as='footer'
+      width='100%'
       bgColor='teal'
-      position="relative"
-      backgroundImage={`url(${bg})`}
-      bgPos="center"
-      bgSize='cover'
-      bgRepeat="no-repeat"
+      color='white'
+      py='16px'
+      background={gradient}
+      borderTop='1px'
+      borderTopColor='teal.900'
     >
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        bg="rgba(0, 0, 0, 0.3)"
-      />
       <Container
+        maxW='1176px'
+        mx='auto'
         display='flex'
         flexDirection={{ base: 'column', md: 'row' }}
         alignItems='center'
         justifyContent='space-between'
-        maxW={{ base: '744px', lg: '1000px', xl: '1176px' }}
-        px="12px"
-        py='24px'
-        position="relative"
-        zIndex="1"
-        mx="auto"
         gap='32px'
       >
+        <Link to="/">
+          <Box w='14rem'>
+            <img src={i18n.language === 'ua' ? logoSvg : logoSvgEn} alt="Logo" />
+          </Box>
+        </Link>
         <FooterAbout />
-        <FooterGallery />
+        <NavBar
+          flexDir='column'
+          color='white'
+          fontSize='md'
+          align='center'
+        />
       </Container>
+
+      <Box
+        mt='24px'
+        textAlign='center'
+      >
+        <Text fontSize='sm' opacity='0.8'>
+          © 2023 <a href="your_link_here">SevenTy</a>. All rights reserved.
+        </Text>
+
+      </Box>
     </Box>
   );
 };

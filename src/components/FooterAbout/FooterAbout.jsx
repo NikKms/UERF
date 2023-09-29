@@ -5,8 +5,7 @@ const FooterAbout = () => {
 
     return <Box as='div'>
         <VStack color='white'>
-            <Text as='h2'>About</Text>;
-            <Text as='p'>UERF</Text>
+            <Text as='h2'>Український екологічний антикризовий Фонд</Text>
             <Text as='p'>adress</Text>
             <Text as='p'>email</Text>
             <Text as='p'>phone</Text>
