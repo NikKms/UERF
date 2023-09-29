@@ -18,10 +18,15 @@ export const ContactForm = () => {
     >
       {({ isSubmitting, handleSubmit }) => (
         <Form>
-          <Flex gap="30px" mb="30px">
+          <Flex gap="30px" mb="30px" flexWrap="wrap">
             <Field name="name">
               {({ field, form }) => (
-                <FormControl>
+                <FormControl
+                  w={{
+                    sm: 'calc((100% - 30px) / 2)',
+                    lg: 'calc((100% - 60px) / 3)',
+                  }}
+                >
                   <FormLabel color="#fff">{t('contactForm.name')}</FormLabel>
                   <Input {...field} placeholder="" bgColor="#fff" />
                 </FormControl>
@@ -29,15 +34,30 @@ export const ContactForm = () => {
             </Field>
             <Field name="phone">
               {({ field, form }) => (
-                <FormControl>
+                <FormControl
+                  w={{
+                    sm: 'calc((100% - 30px) / 2)',
+                    lg: 'calc((100% - 60px) / 3)',
+                  }}
+                >
                   <FormLabel color="#fff">Телефон *</FormLabel>
-                  <Input {...field} placeholder="+380(" bgColor="#fff" />
+                  <Input
+                    {...field}
+                    placeholder="+380("
+                    bgColor="#fff"
+                    w="100%"
+                  />
                 </FormControl>
               )}
             </Field>
             <Field name="email">
               {({ field, form }) => (
-                <FormControl>
+                <FormControl
+                  w={{
+                    sm: 'calc((100% - 30px) / 2)',
+                    lg: 'calc((100% - 60px) / 3)',
+                  }}
+                >
                   <FormLabel color="#fff">E-mail *</FormLabel>
                   <Input {...field} placeholder="Ваш е-mail" bgColor="#fff" />
                 </FormControl>
@@ -65,6 +85,12 @@ export const ContactForm = () => {
           <Flex justifyContent="flex-end" mt="30px">
             <Button
               onSubmit={handleSubmit}
+              minW={210}
+              bg="#23b24b"
+              borderRadius="30px"
+              padding="0 15px"
+              height="50px"
+              color="#fff"
               isLoading={isSubmitting}
               type="submit"
             >
