@@ -24,13 +24,18 @@ export const ModalContact = ({ onClose, isOpen, children }) => {
       <ModalOverlay />
       <ModalContent>
         <ModalBody p={0}>
-          <Flex>
+          <Flex
+            pr={{ md: '0', lg: '40px' }}
+            alignItems={{ lg: 'center' }}
+            position={{ sm: 'relative' }}
+          >
             <Center
               flex="1"
               h="100vh"
               bgImage={bg}
               bgColor="#000"
               position="relative"
+              p={{ sm: '15px' }}
             >
               <Box zIndex={99}>
                 <Heading color="#fff" mb={30}>
@@ -47,25 +52,27 @@ export const ModalContact = ({ onClose, isOpen, children }) => {
                 background="rgb(9 87 9 / 28%)"
               />
             </Center>
-
+            <Button
+              w={75}
+              h={75}
+              position={{ sm: 'absolute', md: 'relative' }}
+              top={{ sm: '15px' }}
+              right={{ sm: '15px' }}
+              onClick={onClose}
+              borderRadius="50%"
+              bgColor="#23b24b"
+              color="#fff"
+              ml={{ md: -25 }}
+            >
+              <CloseIcon />
+            </Button>
+            {/* 
             <Box
               w={110}
               backgroundColor="#fff"
               display="flex"
               alignItems="center"
-            >
-              <Button
-                w={75}
-                h={75}
-                onClick={onClose}
-                borderRadius="50%"
-                bgColor="#23b24b"
-                color="#fff"
-                marginLeft={-37.5}
-              >
-                <CloseIcon />
-              </Button>
-            </Box>
+            /> */}
           </Flex>
         </ModalBody>
         {/* <ModalFooter>

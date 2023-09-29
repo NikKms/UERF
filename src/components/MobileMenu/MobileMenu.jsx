@@ -4,18 +4,18 @@ import {
   DrawerFooter,
   DrawerOverlay,
   DrawerContent,
-  useDisclosure,
 } from '@chakra-ui/react';
+
 import { useRef } from 'react';
-import Nav from '../Nav/Nav';
+import NavBar from '../NavBar/NavBar';
 import MobileBtn from './MobileBtn/MobileBtn';
 import { useSwipeable } from 'react-swipeable';
+import LangSelect from '../LangSelect/LangSelect';
 
-const MobileMenu = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const MobileMenu = ({ isOpen, onOpen, onClose }) => {
+  const btnRef = useRef();
   const swipeHandlers = useSwipeable({ onSwipedRight: onClose });
 
-  const btnRef = useRef();
   return (
     <>
       <MobileBtn onClick={onOpen} isOpen={isOpen} />
@@ -26,21 +26,24 @@ const MobileMenu = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
+
         <DrawerContent
           {...swipeHandlers}
           bg={
-            'linear-gradient(90deg, rgba(44,64,55,0.8065727511707808) 10%, rgba(19,136,88,0.6777212105545343) 50%, rgba(137,210,177,0) 400%)'
+            'linear-gradient(90deg, rgba(0,0,0, 0) 2%, rgba(19,136,88,0.5) 40%, rgba(137,210,177,0) 200%)'
           }
           pt="17px"
           pr="13px"
         >
           <MobileBtn onClick={onClose} isOpen={isOpen} />
 
-          <DrawerBody display={'flex'} flexDir={'column'}>
-            <Nav />
+          <DrawerBody display={'flex'} justifyContent={'center'} pt="100px">
+            <NavBar onClick={onClose} flexDir={'column'} />
           </DrawerBody>
 
-          <DrawerFooter></DrawerFooter>
+          <DrawerFooter>
+            <LangSelect />
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
