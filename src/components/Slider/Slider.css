@@ -25,13 +25,13 @@
 
 .swiper-slide.swiper-slide-active div {
   transform: scale(1.05);
-  transition: all 2000ms, filter 2000ms ease-in-out;
+  transition: all 2500ms, filter 2500ms ease-in-out;
   filter: brightness(100%);
 }
 
 .swiper-slide div {
   transform: scale(1);
-  transition: all 2000ms, filter 2000ms ease-in-out;
+  transition: all 2500ms, filter 2500ms ease-in-out;
 
   filter: brightness(60%);
 }
