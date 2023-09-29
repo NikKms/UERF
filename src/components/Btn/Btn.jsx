@@ -1,11 +1,11 @@
 import { Button } from '@chakra-ui/react';
 
-const Btn = ({ text, style = null, icon = null }) => {
+const Btn = ({ text, style = null, icon = null, onClick }) => {
   return (
     <Button
       minW={'80px'}
       leftIcon={icon}
-      style={{ ...style }}
+      style={style}
       variant="solid"
       p="0 15px"
       fontSize="12px"
@@ -22,6 +22,7 @@ const Btn = ({ text, style = null, icon = null }) => {
         transform: 'translateY(-7px)',
       }}
       _active={{ transform: ' translateY(-1px)' }}
+      onClick={onClick}
     >
       {text}
     </Button>
