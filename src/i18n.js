@@ -10,24 +10,24 @@ import { initReactI18next } from 'react-i18next';
 
 
 i18n
-    .use(Backend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-        debug: false,
-        fallbackLng: 'en',
-        supportedLngs: ['en', 'ua'],
-        backend: {
-            loadPath: '/locales/{{lng}}/translation.json',
-        },
-        // detection: {
-        //     order: ['localStorage', 'navigator', 'querystring', 'htmlTag'],
-        //     htmlTag: document.documentElement,
-        //     lookupQuerystring: 'lang',
-        //     lookupLocalStorage: 'i18nextLng',
-        //     caches: ['localStorage'],
-        //     // convertDetectedLanguage: (lng) => lng.replace('-', '_'),
-        // },
-    });
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    debug: false,
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'ua'],
+    backend: {
+      loadPath: '/locales/{{lng}}/translation.json',
+    },
+    // detection: {
+    //     order: ['localStorage', 'navigator', 'querystring', 'htmlTag'],
+    //     htmlTag: document.documentElement,
+    //     lookupQuerystring: 'lang',
+    //     lookupLocalStorage: 'i18nextLng',
+    //     caches: ['localStorage'],
+    //     // convertDetectedLanguage: (lng) => lng.replace('-', '_'),
+    // },
+  });
 
 export default i18n;

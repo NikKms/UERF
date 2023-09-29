@@ -1,6 +1,6 @@
-import './NavBtn.css';
+import './HeroBtn.css';
 
-const NavBtnSvg1 = () => {
+const HeroBtnSvg1 = () => {
   const svgStyle = {
     shapeRendering: 'geometricPrecision',
     textRendering: 'geometricPrecision',
@@ -29,7 +29,7 @@ const NavBtnSvg1 = () => {
   );
 };
 
-const NavBtnSvg2 = () => {
+const HeroBtnSvg2 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const NavBtnSvg2 = () => {
   );
 };
 
-const NavBtnSvg3 = () => {
+const HeroBtnSvg3 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const NavBtnSvg3 = () => {
   );
 };
 
-const NavBtnSvg4 = () => {
+const HeroBtnSvg4 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ const NavBtnSvg4 = () => {
   );
 };
 
-const NavBtnSvg5 = () => {
+const HeroBtnSvg5 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -141,27 +141,27 @@ const NavBtnSvg5 = () => {
   );
 };
 
-const NavBtn = ({ icon = null }) => {
+const HeroBtn = ({ icon = null }) => {
   return (
-    <button className="navBtn">
+    <button className="HeroBtn">
       {icon}
       <div className="icon-1">
-        <NavBtnSvg1 />
+        <HeroBtnSvg1 />
       </div>
       <div className="icon-2">
-        <NavBtnSvg2 />
+        <HeroBtnSvg2 />
       </div>
       <div className="icon-3">
-        <NavBtnSvg3 />
+        <HeroBtnSvg3 />
       </div>
       <div className="icon-4">
-        <NavBtnSvg4 />
+        <HeroBtnSvg4 />
       </div>
       <div className="icon-5">
-        <NavBtnSvg5 />
+        <HeroBtnSvg5 />
       </div>
     </button>
   );
 };
 
-export default NavBtn;
+export default HeroBtn;
