@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <Box margin="0 auto" transition="0.5s ease-out">
       {/* <Meta /> */}
-      <Flex wrap="wrap" minHeight="90vh">
+      <Flex wrap="wrap" minHeight="100vh">
         <Header />
         <Box width="full" as="main">
           {children}

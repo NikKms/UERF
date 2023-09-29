@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import lang from '../../assets/svg/lang.svg'
-import engFlag from '../../assets/Image/eng.png';
-import ukrFlag from '../../assets/Image/ua.png';
+import engFlag from '../../assets/img/eng.png';
+import ukrFlag from '../../assets/img/ua.png';
 
 export const dataLang = [
     { name: "ENG", value: engFlag, key: 'en', color: 'blue' },
