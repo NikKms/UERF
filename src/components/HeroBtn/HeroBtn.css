@@ -1,6 +1,5 @@
-.navBtn {
+.HeroBtn {
   position: relative;
-  /* width: 100px; */
   padding: 13px;
   background: #f5ddb7;
   font-size: 17px;
@@ -67,12 +66,12 @@
   z-index: -2;
 }
 
-.navBtn:hover {
+.HeroBtn:hover {
   padding: 13px;
   border-radius: 8px 8px 24px 24px;
 }
 
-.navBtn:hover .icon-1 {
+.HeroBtn:hover .icon-1 {
   top: -150%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -108,7 +107,7 @@
   }
 }
 
-.navBtn:hover .icon-2 {
+.HeroBtn:hover .icon-2 {
   position: absolute;
   top: -100%;
   left: 90%;
@@ -145,7 +144,7 @@
   }
 }
 
-.navBtn:hover .icon-3 {
+.HeroBtn:hover .icon-3 {
   position: absolute;
   top: -130%;
   left: 20%;
@@ -172,7 +171,7 @@
   }
 }
 
-.navBtn:hover .icon-4 {
+.HeroBtn:hover .icon-4 {
   position: absolute;
   top: -200%;
   left: 10%;
@@ -199,7 +198,7 @@
   }
 }
 
-.navBtn:hover .icon-5 {
+.HeroBtn:hover .icon-5 {
   position: absolute;
   top: -200%;
   left: 90%;
