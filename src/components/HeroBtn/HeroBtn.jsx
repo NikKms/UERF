@@ -141,9 +141,9 @@ const HeroBtnSvg5 = () => {
   );
 };
 
-const HeroBtn = ({ icon = null }) => {
+const HeroBtn = ({ icon = null, onClick }) => {
   return (
-    <button className="HeroBtn">
+    <button className="HeroBtn" onClick={onClick}>
       {icon}
       <div className="icon-1">
         <HeroBtnSvg1 />
