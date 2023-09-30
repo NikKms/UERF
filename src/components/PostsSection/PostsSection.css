@@ -1,0 +1,24 @@
+.postText::-webkit-scrollbar {
+  width: 1px;
+}
+
+.postText::-webkit-scrollbar-thumb {
+  background-color: teal;
+  border-radius: 50%;
+}
+
+.postText::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+/* .postText::-webkit-scrollbar {
+  width: 1px;
+} */
+
+/* .postText::-webkit-scrollbar-thumb {
+  background-color: teal;
+  border-radius: 50%;
+}
+
+.postText::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+} */
