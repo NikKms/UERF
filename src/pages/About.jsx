@@ -9,7 +9,12 @@ function About() {
       <Box as="section" flexDirection={'column'} maxW={'full'}>
         <AboutHero />
       </Box>
-      <Box as="section" paddingY={"90px"} flexDirection={'column'} maxW={'full'}>
+      <Box
+        as="section"
+        paddingY={'90px'}
+        flexDirection={'column'}
+        maxW={'full'}
+      >
         <AboutInfo />
       </Box>
     </>

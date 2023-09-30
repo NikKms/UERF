@@ -6,7 +6,11 @@
     "aboutUs": {}
   },
   "eventPage": {},
-  "aboutPage": {},
+  "aboutPage": {
+    "hero": {
+      "title": "про нас"
+    }
+  },
   "footer": {},
   "contactForm": {
     "name": "Имя"

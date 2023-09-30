@@ -4,6 +4,7 @@ import {
   DrawerFooter,
   DrawerOverlay,
   DrawerContent,
+  DrawerHeader,
 } from '@chakra-ui/react';
 
 import { useRef } from 'react';
@@ -37,7 +38,9 @@ const MobileMenu = ({ isOpen, onOpen, onClose }) => {
           overflow="hidden"
         >
           <MobileBtn onClick={onClose} isOpen={isOpen} />
-
+          <DrawerHeader alignSelf={'flex-end'} p={'0'} mt={'20px'}>
+            <LangSelect />
+          </DrawerHeader>
           <DrawerBody
             display={'flex'}
             justifyContent={'center'}
@@ -47,9 +50,7 @@ const MobileMenu = ({ isOpen, onOpen, onClose }) => {
             <NavBar onClick={onClose} flexDir={'column'} />
           </DrawerBody>
 
-          <DrawerFooter>
-            <LangSelect />
-          </DrawerFooter>
+          <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

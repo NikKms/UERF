@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Divider, Flex } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
 // import Meta from "./Meta";
