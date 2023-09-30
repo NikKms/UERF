@@ -55,7 +55,6 @@ const LangSelect = () => {
                     <Box
                         w='100%'
                         h='100%'
-                        position='absolute'
                         backfacevisibility='hidden'
                         background={`url(${dataLang.find(lang => lang.key !== currentLanguage)?.value})`}
                         backgroundSize='cover'
