@@ -1,8 +1,8 @@
 {
-  "nav": {},
+  "nav": { "home": "Home", "events": "Events", "about": "About" },
   "info": {},
   "homePage": {
-    "hero": {},
+    "hero": { "title": "Join forum, save the Earth!" },
     "aboutUs": {}
   },
   "eventPage": {},
