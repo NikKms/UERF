@@ -29,7 +29,7 @@ const Slider = ({ data }) => {
         <SwiperSlide key={index}>
           <Box
             as="div"
-            h="80vh"
+            h="90vh"
             w="100vw"
             bgImage={`url(${bg})`}
             bgPos="center"
