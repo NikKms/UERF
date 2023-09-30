@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 // eslint-disable-next-line react/prop-types
@@ -11,7 +12,7 @@ const WaveText = ({ children, ...props }) => {
     },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0 },
+      transition: { staggerChildren: 0.09, delayChildren: 0 },
     },
   };
 
@@ -21,7 +22,7 @@ const WaveText = ({ children, ...props }) => {
       transition: {
         type: 'spring',
         damping: 12,
-        stiffness: 200,
+        stiffness: 100,
       },
     },
     hidden: {
@@ -29,17 +30,18 @@ const WaveText = ({ children, ...props }) => {
       transition: {
         type: 'spring',
         damping: 12,
-        stiffness: 200,
+        stiffness: 400,
       },
     },
   };
 
   return (
-    <motion.h1
-      style={{ display: 'flex', overflow: 'hidden' }}
+    <Heading
+      as={motion.h1}
       variants={container}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.8 }}
       {...props}
     >
       {letters &&
@@ -48,7 +50,7 @@ const WaveText = ({ children, ...props }) => {
             {letter === ' ' ? '\u00A0' : letter}
           </motion.span>
         ))}
-    </motion.h1>
+    </Heading>
   );
 };
 

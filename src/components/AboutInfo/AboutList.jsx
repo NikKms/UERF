@@ -26,7 +26,11 @@ const aboutVariants = {
 const AboutList = () => {
   return (
     <AnimateOnScroll>
-      <Grid as={'ul'} templateColumns="repeat(3, 1fr)" textAlign={'center'}>
+      <Grid
+        as={'ul'}
+        templateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
+        textAlign={'center'}
+      >
         <motion.div variants={aboutVariants}>
           <GridItem>
             <Image
