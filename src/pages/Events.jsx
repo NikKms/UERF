@@ -1,7 +1,7 @@
-import React from "react";
+import EventsList from '../components/EventsList/EventsList';
 
 const Events = () => {
-    return <div>Events</div>;
+  return <EventsList />;
 };
 
 export default Events;
