@@ -1,20 +1,22 @@
 import Slider from '../Slider/Slider';
 import heroBgArr from '../../common/data/sliderBgArr';
-import { Box, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, Heading, useDisclosure } from '@chakra-ui/react';
 import HeroBtn from '../HeroBtn/HeroBtn';
 import { ModalContact } from '../ModalContact/ModalContact';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { ForumIcon } from '../../common/icons/ForumIcon';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { t } = useTranslation();
 
   return (
     <section style={{ position: 'relative', overflow: 'hidden' }}>
       <Box pos="absolute" zIndex="2" top="55%" left="5%">
-        <Text as="h2" fontSize="38px" fontWeight="700" mb="5" color="#fff">
-          Join forum, save the Earth!
-        </Text>
+        <Heading mb="5" color="#fff">
+          {t('homePage.hero.title')}
+        </Heading>
         <HeroBtn icon={<ForumIcon />} onClick={onOpen} />
       </Box>
       <Slider data={heroBgArr} />

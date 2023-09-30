@@ -1,9 +1,11 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 import Btn from '../Btn/Btn';
-import { NavBarItems } from '../../common/data/navBarItems';
 import './NavBar.css';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { NavigationItems } from '../../common/data/NavigationItems';
+import { useEffect, useState } from 'react';
 
 const listAnimation = {
   hidden: {
@@ -22,6 +24,20 @@ const listAnimation = {
 };
 
 const NavBar = ({ onClick, flexDir = 'row' }) => {
+  const { t, i18n } = useTranslation();
+  const [languageKey, setLanguageKey] = useState(i18n.language);
+  const [navBarItems, setNavBarItems] = useState(NavigationItems);
+
+  useEffect(() => {
+    const NavItems = [
+      { name: t('nav.home'), path: '/' },
+      { name: t('nav.events'), path: '/events' },
+      { name: t('nav.about'), path: '/about' },
+    ];
+
+    setNavBarItems(NavItems);
+    setLanguageKey(i18n.language);
+  }, [t, i18n]);
   return (
     <Flex
       as={motion.ul}
@@ -31,8 +47,9 @@ const NavBar = ({ onClick, flexDir = 'row' }) => {
       gap={5}
       listStyleType="none"
       flexDir={flexDir}
+      key={languageKey}
     >
-      {NavBarItems.map(({ name, path }, index) => (
+      {navBarItems.map(({ name, path }, index) => (
         <Box
           as={motion.li}
           variants={listAnimation}
@@ -43,7 +60,7 @@ const NavBar = ({ onClick, flexDir = 'row' }) => {
             <Btn
               text={name}
               onClick={onClick}
-              style={flexDir === 'column' ? { padding: '0 50px' } : null}
+              style={flexDir === 'column' ? { width: '150px' } : null}
             />
           </NavLink>
         </Box>

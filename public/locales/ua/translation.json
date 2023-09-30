@@ -1,8 +1,8 @@
 {
-  "nav": {},
+  "nav": { "home": "Додому", "events": "Події", "about": "Про нас" },
   "info": {},
   "homePage": {
-    "hero": {},
+    "hero": { "title": "Приєднайся до форума, врятуй Землю!" },
     "aboutUs": {}
   },
   "eventPage": {},
