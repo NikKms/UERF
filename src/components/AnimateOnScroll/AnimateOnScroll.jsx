@@ -11,7 +11,7 @@ const AnimateOnScroll = ({ children, variant }) => {
       initial="offscreen"
       whileInView="onscreen"
       transition={{ staggerChildren: 0.07, delayChildren: 0.2 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.5 }}
       variants={variant}
     >
       {children}
