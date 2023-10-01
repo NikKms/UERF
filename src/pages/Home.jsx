@@ -9,8 +9,8 @@ const Home = () => {
     <Hero />
     <WhoWe />
     <PostsSection />
-    <Upcoming />
     <Sponsors />
+    <Upcoming />
   </>
 };
 
