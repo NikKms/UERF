@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Image, Text } from '@chakra-ui/react';
+
 import aboutImg from '../../assets/svg/about-icons/light-bulb-eco-svgrepo-com.svg';
 import AboutList from './AboutList';
 import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
@@ -15,7 +16,7 @@ const variant = {
     transition: {
       type: 'spring',
       bounce: 0.2,
-      duration: 0.5,
+      duration: 1,
     },
   },
 };
@@ -27,6 +28,7 @@ const AboutInfo = () => {
       <Container
         maxW={{ base: '744px', lg: '1000px', xl: '1176px' }}
         display={'flex'}
+        alignItems={'center'}
         px="12px"
       >
         <AnimateOnScroll variant={variant}>

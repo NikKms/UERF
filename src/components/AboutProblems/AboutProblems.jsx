@@ -1,6 +1,6 @@
 import { Box, Container } from '@chakra-ui/react';
 import AboutProblemsList from './AboutProblemsList';
-import WaveText from '../AboutHero/WaveText';
+import WaveText from '../WaveText/WaveText';
 
 const AboutProblems = () => {
   return (
