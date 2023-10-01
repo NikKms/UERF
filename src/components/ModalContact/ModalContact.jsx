@@ -20,52 +20,33 @@ import bg from '../../assets/img/calling.jpg';
 
 export const ModalContact = ({ onClose, isOpen, children }) => {
   return (
-    <Modal onClose={onClose} isOpen={isOpen} size="full">
-      <ModalOverlay />
-      <ModalContent>
+    <Modal onClose={onClose} isOpen={isOpen} size="3xl" isCentered>
+      <ModalOverlay bg="linear-gradient(-45deg, rgb(255 254 10 / 31%), rgb(22 172 223 / 61%))" />
+      <ModalContent bg="transparent" boxShadow="none">
         <ModalBody p={0}>
-          <Flex
-            pr={{ md: '0', lg: '40px' }}
-            alignItems={{ lg: 'center' }}
-            position={{ sm: 'relative' }}
+          <ModalCloseButton />
+          {/* <Button
+            w={75}
+            h={75}
+            top={{ sm: '15px' }}
+            right={{ sm: '15px' }}
+            onClick={onClose}
+            borderRadius="50%"
+            bgColor="#23b24b"
+            color="#fff"
           >
+            <CloseIcon />
+          </Button> */}
+          <Flex>
             <Center
               flex="1"
-              h="100vh"
-              bgImage={bg}
-              bgColor="#000"
-              position="relative"
+              justifyContent="center"
+              alignItems="center"
               p={{ sm: '15px' }}
             >
-              <Box zIndex={99}>
-                <Heading color="#fff" mb={30}>
-                  Подати заявку
-                </Heading>
-                {children}
-              </Box>
-              <Box
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                background="rgb(9 87 9 / 28%)"
-              />
+              <Box zIndex={99}>{children}</Box>
             </Center>
-            <Button
-              w={75}
-              h={75}
-              position={{ sm: 'absolute', md: 'relative' }}
-              top={{ sm: '15px' }}
-              right={{ sm: '15px' }}
-              onClick={onClose}
-              borderRadius="50%"
-              bgColor="#23b24b"
-              color="#fff"
-              ml={{ md: -25 }}
-            >
-              <CloseIcon />
-            </Button>
+
             {/* 
             <Box
               w={110}
