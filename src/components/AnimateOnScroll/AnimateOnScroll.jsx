@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -6,16 +7,17 @@ const AnimateOnScroll = ({ children, variant }) => {
   const ref = useRef(null);
 
   return (
-    <motion.div
+    <Box
+      as={motion.div}
       ref={ref}
       initial="offscreen"
       whileInView="onscreen"
-      transition={{ staggerChildren: 0.07, delayChildren: 0.2 }}
-      viewport={{ once: true, amount: 0.5 }}
+      transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
+      viewport={{ once: true, amount: 0.4 }}
       variants={variant}
     >
       {children}
-    </motion.div>
+    </Box>
   );
 };
 

@@ -1,85 +1,79 @@
-import { Container, Flex, Heading, Image, Text, Button, Box } from "@chakra-ui/react";
+import React from "react";
+import { Container, Flex, Heading, Text, Button, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import whowe from '../../assets/svg/whowe.svg';
+import whowe from '../../assets/img/whowe.jpg';
+import whowemain from '../../assets/img/whowemain.jpg';
+import whowe2 from '../../assets/img/whowe2.jpg';
 import Btn from "../Btn/Btn";
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 
+const images = [whowe, whowemain, whowe2];
+
 const WhoWe = () => {
 
-    const headingVariants = {
-        hidden: { opacity: 0, y: -20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-    };
-
-    const textVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } },
-    };
 
     return (
-        <Box as="section"
-            py={{ base: '36px', lg: '72px', xl: '112px' }}
-            background={'rgba(204, 225, 225,  0.1)'}
-        >
+        <Box as="section" py={{ base: '36px', lg: '72px', xl: '90px' }}>
             <Container
-                bgColor={"white"}
+                display={"flex"}
+                flexDirection={'column'}
+                gap={'24px'}
+                borderRadius={'lg'}
                 maxW={{ base: '744px', lg: '1000px', xl: '1176px' }}
-                borderRadius="xl"
                 boxShadow="lg"
                 p='12px'
             >
                 <MotionHeading
-                    variants={headingVariants}
+                    as={'h1'}
+                    color={'teal.600'}
                     initial="hidden"
                     animate="visible"
                     mb={6}
                     textAlign="center"
                     fontSize={{ base: '2xl', lg: '4xl' }}
                     fontWeight="bold"
+                    position="relative"
                 >
+
                     Український екологічний антикризовий фонд
+
                 </MotionHeading>
-                <Flex
-                    direction={{ base: 'column', lg: 'row' }}
-                    alignItems="center"
-                    justifyContent="space-between"
+                <MotionText
+                    initial="hidden"
+                    animate="visible"
+                    fontSize={{ base: 'md', lg: 'lg' }}
                 >
-                    <MotionText
-                        variants={textVariants}
-                        initial="hidden"
-                        animate="visible"
-                        mr={{ base: 0, lg: 6 }}
-                        mb={{ base: 4, lg: 0 }}
-                        maxW={{ base: '100%', lg: '60%' }}
-                        textAlign={{ base: 'center', lg: 'left' }}
-                        fontSize={{ base: 'xl', lg: '2xl' }}
-                        fontWeight="medium"
-                    >
-                        – це команда однодумців: екологів, екоактивістів, фахівців установ та відомств екологічного напрямку, небайдужих українців, які усвідомлюють усі жахливі наслідки повномасштабної ворожої агресії для екологічної ситуації в Україні.
+                    – це команда однодумців: екологів, екоактивістів, фахівців установ та відомств екологічного напрямку, небайдужих українців, які усвідомлюють усі жахливі наслідки повномасштабної ворожої агресії для екологічної ситуації в Україні.
+                </MotionText>
 
-                        Руйнування екосистем, забруднення ґрунтів та водного простору, зменшення біорізноманіття – це екоцид.
-
-                        Наш фонд – це платформа для всіх, хто займається розробкою та реалізацією різноманітних екологічних проєктів, хто працює на ниві екологічного просвітництва, хто попри усі складнощі та об’єктивне погіршення умов проводить екологічні дослідження.
-                    </MotionText>
-                    <Box display={'flex'}>
-                        <Image
-                            display={{ base: 'none', lg: 'block' }}
-                            height={'550px'}
-                            margin={'0 auto'}
-                            mt={'2rem'}
-                            src={whowe}
-                        />
-                    </Box>
+                <Flex wrap="wrap" justifyContent="space-between">
+                    {images.map((image, index) => (
+                        <Box key={index} w={"30%"} h={'150px'} bgImage={image} bgRepeat={'no-repeat'} bgPosition={'center'} bgSize={'cover'} mb={4} borderRadius={'lg'}>
+                            <MotionText
+                                initial="hidden"
+                                animate="visible"
+                                textAlign="center"
+                                fontSize={{ base: 'md', lg: 'lg' }}
+                                fontWeight="medium"
+                                p={4}
+                                color="white"
+                            >
+                                слоган
+                            </MotionText>
+                        </Box>
+                    ))}
                 </Flex>
-                <Link to="/about">
-                    <Btn text='go to about' />
-                </Link>
 
+                <Box alignSelf={'center'}>
+                    <Link to="/about">
+                        <Btn text='go to about' style={{ width: '300px' }} />
+                    </Link>
+                </Box>
             </Container>
-        </Box>
+        </Box >
     );
 };
 
