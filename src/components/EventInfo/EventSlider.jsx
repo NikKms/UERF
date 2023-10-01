@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import PropTypes from 'prop-types';
-import { Container } from '@chakra-ui/react';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -11,12 +11,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 const EventSlider = ({ data }) => {
   return (
-    <Container
-      maxW={{ base: '744px', lg: '1000px', xl: '1176px' }}
-      px="12px"
-      marginTop="90px"
-      marginBottom="90px"
-    >
+    <section>
       <Swiper
         spaceBetween={30}
         slidesPerView={3}
@@ -33,7 +28,7 @@ const EventSlider = ({ data }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Container>
+    </section>
   );
 };
 

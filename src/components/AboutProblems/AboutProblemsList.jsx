@@ -5,6 +5,7 @@ import bgHero1 from '../../assets/img/1.jpg';
 import bgHero2 from '../../assets/img/2.jpg';
 import bgHero3 from '../../assets/img/3.jpg';
 import bgHero4 from '../../assets/img/4.jpg';
+import { useTranslation } from 'react-i18next';
 
 const aboutVariants = {
   offscreen: {
@@ -48,6 +49,8 @@ const photoArr = [
 ];
 
 const AboutProblemsList = () => {
+  const { t } = useTranslation();
+
   return (
     <AnimateOnScroll>
       <Grid
@@ -69,11 +72,11 @@ const AboutProblemsList = () => {
               as={motion.img}
               src={el.url}
               minH={'200px'}
-              whileHover={{scale: 1.1}}
+              whileHover={{ scale: 1.1 }}
               objectFit={'cover'}
             />
             <Heading as={'h3'} textTransform={'uppercase'} size={'md'}>
-              {el.title}
+              {t('aboutPage.solutions.title')}
             </Heading>
             <Text as={'p'} color={'green.700'}>
               {el.text}

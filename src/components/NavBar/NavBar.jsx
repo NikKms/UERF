@@ -32,6 +32,7 @@ const NavBar = ({ onClick, flexDir = 'row' }) => {
     const NavItems = [
       { name: t('nav.home'), path: '/' },
       { name: t('nav.events'), path: '/events' },
+      { name: t('nav.news'), path: '/news' },
       { name: t('nav.about'), path: '/about' },
     ];
 

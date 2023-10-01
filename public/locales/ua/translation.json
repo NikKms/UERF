@@ -1,14 +1,26 @@
 {
-  "nav": { "home": "Додому", "events": "Події", "about": "Про нас" },
+  "nav": {
+    "home": "Додому",
+    "events": "Події",
+    "news": "Новини",
+    "about": "Про нас"
+  },
   "info": {},
   "homePage": {
     "hero": { "title": "Приєднайся до форума, врятуй Землю!" },
     "aboutUs": {}
   },
-  "eventPage": {},
+  "eventPage": {
+    "hero": {
+      "title": "Події"
+    }
+  },
   "aboutPage": {
     "hero": {
       "title": "про нас"
+    },
+    "solutions": {
+      "title": "укр 123123"
     }
   },
   "footer": {},

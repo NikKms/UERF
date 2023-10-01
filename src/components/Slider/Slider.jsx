@@ -12,10 +12,14 @@ import { Box } from '@chakra-ui/react';
 const Slider = ({ data }) => {
   return (
     <Swiper
+      className="HeroSwiper"
       spaceBetween={0}
       slidesPerView={1}
       loop
-      pagination={{ clickable: true }}
+      pagination={{
+        clickable: true,
+        dynamicBullets: true,
+      }}
       navigation
       centeredSlides={true}
       effect={'fade'}
