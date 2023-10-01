@@ -1,6 +1,6 @@
 .swiper-button-prev,
 .swiper-button-next {
-  color: rgba(82, 174, 165, 0.5);
+  color: rgba(253, 255, 255, 0.5);
   transition: all ease-in-out 500ms;
 }
 .swiper-button-prev:hover,
@@ -15,23 +15,26 @@
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #4c9c9a;
+  background-color: #5ab78b;
 }
 .swiper-pagination-bullet {
-  background-color: rgba(72, 177, 166, 0.7);
-  width: 12px;
-  height: 12px;
+  background-color: rgb(255, 255, 255);
+  width: 16px;
+  height: 16px;
 }
 
-.swiper-slide.swiper-slide-active div {
+.HeroSwiper .swiper-slide.swiper-slide-active div {
   transform: scale(1.05);
   transition: transform 1200ms linear, filter 2500ms ease-in-out;
   filter: brightness(100%);
 }
 
-.swiper-slide div {
+.HeroSwiper .swiper-slide div {
   transform: scale(1);
   transition: transform 1200ms linear, filter 2500ms ease-in-out;
 
   filter: brightness(60%);
+}
+.swiper-slide div {
+  transform: scale(1);
 }
