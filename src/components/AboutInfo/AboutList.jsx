@@ -29,6 +29,7 @@ const AboutList = () => {
       <Grid
         as={'ul'}
         templateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
+        rowGap={'2.5rem'}
         textAlign={'center'}
       >
         <motion.div variants={aboutVariants}>
@@ -36,11 +37,10 @@ const AboutList = () => {
             <Image
               src={sun}
               margin={'0 auto'}
-              mb={'12px'}
               width={'100px'}
               height={'100px'}
             />
-            <Text mb={'8px'} fontWeight={'semibold'} fontSize={'4xl'}>
+            <Text fontWeight={'semibold'} fontSize={'4xl'}>
               290
             </Text>
             <Text textTransform={'uppercase'}>Working Project</Text>
@@ -51,11 +51,10 @@ const AboutList = () => {
             <Image
               src={forest}
               margin={'0 auto'}
-              mb={'12px'}
               width={'100px'}
               height={'100px'}
             />
-            <Text mb={'8px'} fontWeight={'semibold'} fontSize={'4xl'}>
+            <Text fontWeight={'semibold'} fontSize={'4xl'}>
               990
             </Text>
             <Text textTransform={'uppercase'}>Volunteer</Text>
@@ -66,11 +65,10 @@ const AboutList = () => {
             <Image
               src={recycle}
               margin={'0 auto'}
-              mb={'12px'}
               width={'100px'}
               height={'100px'}
             />
-            <Text mb={'8px'} fontWeight={'semibold'} fontSize={'4xl'}>
+            <Text fontWeight={'semibold'} fontSize={'4xl'}>
               1800
             </Text>
             <Text textTransform={'uppercase'}>Fund Collect</Text>

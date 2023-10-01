@@ -1,10 +1,14 @@
 import { Heading } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line react/prop-types
 const WaveText = ({ children, ...props }) => {
-  // eslint-disable-next-line react/prop-types
-  const letters = children.split('');
+  const { t, i18n } = useTranslation();
+  const [languageKey, setLanguageKey] = useState(i18n.language);
+
+  const [letters, setLetters] = useState([]);
 
   const container = {
     hidden: {
@@ -15,6 +19,14 @@ const WaveText = ({ children, ...props }) => {
       transition: { staggerChildren: 0.09, delayChildren: 0 },
     },
   };
+
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    const letters = children.split('');
+    setLetters(letters);
+    setLanguageKey(i18n.language);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [t, i18n]);
 
   const child = {
     visible: {
@@ -42,6 +54,7 @@ const WaveText = ({ children, ...props }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.8 }}
+      key={languageKey}
       {...props}
     >
       {letters &&

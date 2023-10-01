@@ -1,11 +1,9 @@
-// import React from 'react';
-import bgImg from '../../assets/img/about_hero.jpg';
-
 import { Box, Center, Text } from '@chakra-ui/react';
-import WaveText from './WaveText';
+import WaveText from '../WaveText/WaveText';
 import { useTranslation } from 'react-i18next';
 
-const AboutHero = () => {
+// eslint-disable-next-line react/prop-types
+const RoutesHero = ({ titlePath, bgImg }) => {
   const linearGradient = `linear-gradient(to top, rgba(6, 7, 7, 0.8),rgba(34, 32, 32, 0.4))`;
   const containerStyle = `${linearGradient}, url(${bgImg}) no-repeat center`;
 
@@ -28,7 +26,7 @@ const AboutHero = () => {
             textTransform: 'uppercase',
           }}
         >
-          {t('aboutPage.hero.title')}
+          {t(titlePath)}
         </WaveText>
         <Text
           fontSize={'xl'}
@@ -43,4 +41,4 @@ const AboutHero = () => {
   );
 };
 
-export default AboutHero;
+export default RoutesHero;
