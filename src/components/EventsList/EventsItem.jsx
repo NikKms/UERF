@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
   const location = useLocation();
+  console.log(image);
   return (
     <GridItem
       as={'li'}
@@ -22,12 +23,12 @@ const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
       transitionDuration="0.5s"
       transitionTimingFunction="ease-in-out"
       _hover={{
-        filter: 'brightness(1.3)',
+        filter: 'brightness(1.2)',
       }}
     >
       <Link to={`/events/${id}`} state={{ from: location }}>
         <Box
-          backgroundColor="rgba(0, 0, 0, 0.5)"
+          backgroundColor="rgba(20, 45, 67, 0.5)"
           position="absolute"
           top={0}
           left={0}
