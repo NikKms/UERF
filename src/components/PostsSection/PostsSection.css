@@ -46,7 +46,6 @@
 
 .mySwiper2 .swiper-button-prev,
 .mySwiper2 .swiper-button-next {
-  top: 300px;
   color: rgba(255, 255, 255, 0.666);
 }
 
@@ -62,4 +61,23 @@
 
 .mySwiper2 .swiper-slide {
   overflow: hidden;
+}
+
+.mySwiper2 .swiper-slide.swiper-slide-active div {
+  @media (max-width: 1199px) {
+    transform: scale(1.05);
+    transition: all 1000ms, filter 1000ms ease-in-out;
+    filter: brightness(100%);
+  }
+}
+.mySwiper2 .swiper-slide.swiper-slide-next div {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    transform: scale(1.05);
+    transition: all 1000ms, filter 1000ms ease-in-out;
+    filter: brightness(100%);
+  }
+}
+
+.mySwiper2 .swiper-wrapper {
+  z-index: -1;
 }
