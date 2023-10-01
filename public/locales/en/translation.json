@@ -1,5 +1,10 @@
 {
-  "nav": { "home": "Home", "events": "Events", "about": "About" },
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "news": "News",
+    "about": "About"
+  },
   "info": {},
   "homePage": {
     "hero": { "title": "Join forum, save the Earth!" },
