@@ -1,26 +1,32 @@
-import eventsList from '../../common/data/card-events.json';
-import { Container, Grid } from '@chakra-ui/react';
+import { Box, Container, Grid } from '@chakra-ui/react';
 import EventsItem from './EventsItem';
+import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
+import eventsList from '../../common/data/card-events';
 
 const EventsList = () => {
   return (
-    <Container
-      maxW={{ base: '744px', lg: '1000px', xl: '1176px' }}
-      px="12px"
-      marginTop="90px"
-      marginBottom="90px"
-    >
-      <Grid
-        as={'ul'}
-        templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}
-        gap={6}
-        rowGap={50}
-      >
-        {eventsList.map(event => (
-          <EventsItem key={event.id} event={event} />
-        ))}
-      </Grid>
-    </Container>
+    <AnimateOnScroll>
+      <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
+        <Box as="section" paddingTop="70px" paddingBottom="70px">
+          <Grid
+            as={'ul'}
+            templateColumns={[
+              'repeat(1, 1fr)',
+              'repeat(1, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(3, 1fr)',
+            ]}
+            gap={6}
+            rowGap={50}
+          >
+            {eventsList.map(event => (
+              <EventsItem key={event.id} event={event} />
+            ))}
+          </Grid>
+        </Box>
+      </Container>
+    </AnimateOnScroll>
   );
 };
 

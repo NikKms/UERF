@@ -19,7 +19,11 @@
     },
     "sponsors": { "title": "Наші спонсори" }
   },
-  "eventPage": {},
+  "eventPage": {
+    "hero": {
+      "title": "Події"
+    }
+  },
   "aboutPage": {
     "hero": {
       "title": "про нас"
