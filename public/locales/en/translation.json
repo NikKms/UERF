@@ -8,18 +8,53 @@
   "info": {},
   "homePage": {
     "hero": { "title": "Join forum, save the Earth!" },
-    "aboutUs": {}
+    "aboutUs": {
+      "title": "Ukranian eco rescue foundation",
+      "description": " We are a team of like-minded individuals: ecologists, eco-activists, experts from environmental institutions, and concerned Ukrainians who are fully aware of the dire consequences of the full-scale hostile aggression for the ecological situation in Ukraine.",
+      "slogan": {
+        "el1": "slogan-1",
+        "el2": "slogan-2",
+        "el3": "slogan-3"
+      }
+    },
+    "sponsors": { "title": "Our sponsors" }
   },
   "eventPage": {},
   "aboutPage": {
     "hero": {
       "title": "about"
-    }, 
+    },
     "solutions": {
-      "title": "save 123123"
+      "title": "our goals",
+      "list": {
+        "forest": {
+          "title": "save our forest",
+          "text": ""
+        },
+        "water": {
+          "title": "water refine",
+          "text": ""
+        },
+        "animals": {
+          "title": "save animals",
+          "text": ""
+        },
+        "eco": {
+          "title": "eco system",
+          "text": ""
+        }
+      }
+    },
+    "gallery": {
+      "title": "gallery"
     }
   },
-  "footer": {},
+  "footer": {
+    "about": {
+      "title": "Ukranian eco rescue foundation",
+      "adress": "11111, Ukraine, Kyiv, Hreshatyk str. , 1"
+    }
+  },
   "contactForm": {
     "name": "Name"
   }

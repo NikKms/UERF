@@ -4,7 +4,9 @@ import Layout from './components/Layout';
 import Routings from './router/Routings';
 import './i18n'
 
+
 function App() {
+
 
   return (
     <ChakraProvider theme={theme} >

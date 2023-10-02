@@ -5,7 +5,29 @@ import bgHero1 from '../../assets/img/1.jpg';
 import bgHero2 from '../../assets/img/2.jpg';
 import bgHero3 from '../../assets/img/3.jpg';
 import bgHero4 from '../../assets/img/4.jpg';
-import { useTranslation } from 'react-i18next';
+
+const photoArr = [
+  {
+    url: bgHero1,
+    title: 'Save forest',
+    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  },
+  {
+    url: bgHero2,
+    title: 'Water refine',
+    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  },
+  {
+    url: bgHero3,
+    title: 'save animals',
+    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  },
+  {
+    url: bgHero4,
+    title: 'eco system',
+    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  },
+];
 
 const aboutVariants = {
   offscreen: {
@@ -25,36 +47,46 @@ const aboutVariants = {
   },
 };
 
-const photoArr = [
-  {
-    url: bgHero1,
-    title: 'SAVE OUR FOREST',
-    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  },
-  {
-    url: bgHero2,
-    title: 'WATER REFINE',
-    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  },
-  {
-    url: bgHero3,
-    title: 'SAVE ANIMALS',
-    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  },
-  {
-    url: bgHero4,
-    title: 'ECO SYSTEM',
-    text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  },
-];
-
 const AboutProblemsList = () => {
-  const { t } = useTranslation();
+  // const { t, i18n } = useTranslation();
+  // const [arr, setArr] = useState(photoArr);
+  // const [languageKey, setLanguageKey] = useState(i18n.language);
+
+  // useEffect(() => {
+  //   // eslint-disable-next-line react/prop-types
+  //   const newArr = [
+  //     {
+  //       url: bgHero1,
+  //       title: t('aboutPage.solutions.list.forest.title'),
+  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  //     },
+  //     {
+  //       url: bgHero2,
+  //       title: t('aboutPage.solutions.list.water.title'),
+  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  //     },
+  //     {
+  //       url: bgHero3,
+  //       title: t('aboutPage.solutions.list.animals.title'),
+  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  //     },
+  //     {
+  //       url: bgHero4,
+  //       title: t('aboutPage.solutions.list.eco.title'),
+  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
+  //     },
+  //   ];
+
+  //   setArr(newArr);
+  //   setLanguageKey(i18n.language);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [t, i18n.resolvedLanguage]);
 
   return (
     <AnimateOnScroll>
       <Grid
-        as={'ul'}
+        as={motion.ul}
+        // key={languageKey}
         templateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }}
         gap={'2rem'}
       >
@@ -72,11 +104,10 @@ const AboutProblemsList = () => {
               as={motion.img}
               src={el.url}
               minH={'200px'}
-              whileHover={{ scale: 1.1 }}
               objectFit={'cover'}
             />
             <Heading as={'h3'} textTransform={'uppercase'} size={'md'}>
-              {t('aboutPage.solutions.title')}
+              {el.title}
             </Heading>
             <Text as={'p'} color={'green.700'}>
               {el.text}
