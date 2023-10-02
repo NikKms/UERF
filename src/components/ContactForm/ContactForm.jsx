@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import {
   Box,
   Button,
   Flex,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Heading,
   Input,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { ForumIcon } from '../../common/icons/ForumIcon';
+import { object, string, number } from 'yup';
 
 export const ContactForm = () => {
   const { t, i18n } = useTranslation();
-  console.log(i18n.language);
+
+  const contactSchema = object({
+    name: string().required('contactForm.ErrorMessages.errorName'),
+    email: string()
+      .email('contactForm.ErrorMessages.emailIsNotCorrect')
+      .required('contactForm.ErrorMessages.errrorEmail'),
+    phone: string()
+      .matches(/^[+0-9-]+$/, 'contactForm.ErrorMessages.phoneIsNotCorrect')
+      .required('contactForm.ErrorMessages.errorPhone'),
+    message: string(),
+  });
+
   return (
     <Formik
       initialValues={{ name: '', phone: '', email: '', message: '' }}
+      validationSchema={contactSchema}
       onSubmit={(values, actions) => {
         setTimeout(() => {
           console.log(values);
@@ -25,7 +39,7 @@ export const ContactForm = () => {
         }, 1000);
       }}
     >
-      {({ isSubmitting, handleSubmit }) => (
+      {({ isSubmitting, handleSubmit, errors, touched }) => (
         <Box position="relative">
           <Box
             position="absolute"
@@ -71,9 +85,13 @@ export const ContactForm = () => {
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
+                    isInvalid={errors.name}
                   >
                     {/* <FormLabel>{t('contactForm.name')}</FormLabel> */}
                     <Input {...field} placeholder="Ім'я" bgColor="#fff" />
+                    {errors.name && touched.name ? (
+                      <FormErrorMessage>{t(errors.name)}</FormErrorMessage>
+                    ) : null}
                   </FormControl>
                 )}
               </Field>
@@ -85,6 +103,7 @@ export const ContactForm = () => {
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
+                    isInvalid={errors.phone}
                   >
                     {/* <FormLabel>Телефон *</FormLabel> */}
                     <Input
@@ -93,6 +112,9 @@ export const ContactForm = () => {
                       bgColor="#fff"
                       w="100%"
                     />
+                    {errors.phone && touched.phone ? (
+                      <FormErrorMessage>{t(errors.phone)}</FormErrorMessage>
+                    ) : null}
                   </FormControl>
                 )}
               </Field>
@@ -104,9 +126,14 @@ export const ContactForm = () => {
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
+                    isInvalid={errors.email}
                   >
                     {/* <FormLabel>E-mail *</FormLabel> */}
                     <Input {...field} placeholder="Ваш е-mail" bgColor="#fff" />
+                    {console.log(errors.email)}
+                    {errors.email && touched.email ? (
+                      <FormErrorMessage>{t(errors.email)}</FormErrorMessage>
+                    ) : null}
                   </FormControl>
                 )}
               </Field>
