@@ -3,7 +3,6 @@ import { Box, Container, Heading, Image, Text } from '@chakra-ui/react';
 import aboutImg from '../../assets/svg/about-icons/light-bulb-eco-svgrepo-com.svg';
 import AboutList from './AboutList';
 import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
-import { useTranslation } from 'react-i18next';
 
 const variant = {
   offscreen: {
@@ -22,7 +21,6 @@ const variant = {
 };
 
 const AboutInfo = () => {
-  const { t } = useTranslation();
   return (
     <Box as="section" paddingY={'90px'} flexDirection={'column'} maxW={'full'}>
       <Container
@@ -44,7 +42,10 @@ const AboutInfo = () => {
               <strong>is the best Revolution</strong>
             </Heading>
             <Text mb={'20px'} fontSize={'lg'}>
-              {t('aboutPage.aboutInfo.text')}
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
+              fugiat, ipsum necessitatibus nesciunt quos pariatur laborum
+              officia dicta, perferendis ullam animi nihil dolorum facere
+              voluptas! Molestias, minus! Possimus, accusantium. Repellat?
             </Text>
             <Text
               fontSize={'xl'}

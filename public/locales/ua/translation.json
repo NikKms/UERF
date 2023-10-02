@@ -16,7 +16,28 @@
       "title": "про нас"
     },
     "solutions": {
-      "title": "укр 123123"
+      "title": "Робочі рішення",
+      "list": {
+        "forest": {
+          "title": "збереження лісу",
+          "text": ""
+        },
+        "water": {
+          "title": "очищення води",
+          "text": ""
+        },
+        "animals": {
+          "title": "захищення тварин",
+          "text": ""
+        },
+        "eco": {
+          "title": "екосистема",
+          "text": ""
+        }
+      }
+    }, 
+    "gallery": {
+      "title": "галерея"
     }
   },
   "footer": {},

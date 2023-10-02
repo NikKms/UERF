@@ -8,7 +8,8 @@ const WaveText = ({ children, ...props }) => {
   const { t, i18n } = useTranslation();
   const [languageKey, setLanguageKey] = useState(i18n.language);
 
-  const [letters, setLetters] = useState([]);
+  // eslint-disable-next-line react/prop-types
+  const [letters, setLetters] = useState(children.split(''));
 
   const container = {
     hidden: {
@@ -25,7 +26,7 @@ const WaveText = ({ children, ...props }) => {
     const letters = children.split('');
     setLetters(letters);
     setLanguageKey(i18n.language);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [t, i18n]);
 
   const child = {

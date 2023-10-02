@@ -1,8 +1,12 @@
 import { Box, Container } from '@chakra-ui/react';
 import AboutProblemsList from './AboutProblemsList';
 import WaveText from '../WaveText/WaveText';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const AboutProblems = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       as="section"
@@ -13,15 +17,15 @@ const AboutProblems = () => {
     >
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
         <WaveText
-          style={{
-            fontSize: '3rem',
-            fontWeight: '400',
-            textAlign: 'center',
-            marginBottom: '2rem',
-            color: '#000',
-          }}
+          as={motion.h2}
+          fontWeight={400}
+          fontSize={'3rem'}
+          color="black"
+          mb={'2rem'}
+          textAlign="center"
+          textTransform="capitalize"
         >
-          Working Solutions
+          {t('aboutPage.solutions.title')}
         </WaveText>
         <AboutProblemsList />
       </Container>
