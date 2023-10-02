@@ -29,13 +29,14 @@ const BtnToTop = () => {
     return (
         <Button
             colorScheme="teal"
+            padding={'16px'}
             variant={isVisible ? 'solid' : 'ghost'}
             position="fixed"
             bottom="4"
             right="4"
             borderRadius={'full'}
             onClick={scrollToTop}
-            display={isVisible ? 'block' : 'none'}
+            display={isVisible ? 'flex' : 'none'}
         >
             <Image src={arrow} boxSize={'35px'} color={'white'} />
         </Button>

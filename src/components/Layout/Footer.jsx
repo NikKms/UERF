@@ -41,8 +41,8 @@ const Footer = () => {
         mt='24px'
         textAlign='center'
       >
-        <Text fontSize='sm' opacity='0.8'>
-          © 2023 <a href="your_link_here">SevenTy</a>. All rights reserved.
+        <Text fontSize='sm' opacity='0.8' >
+          © 2023 <Box as='a' _hover={{ color: "teal.400" }} href="your_link_here">SevenTy</Box>. All rights reserved.
         </Text>
 
       </Box>
