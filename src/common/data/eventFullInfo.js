@@ -11,8 +11,17 @@ const eventFullInfo = [
   {
     id: '01',
     title:
-      'Meeting Between the Head of the Ukrainian Environmental Anti-Crisis Fund and Forestry Experts to Restore Damaged Forests in Ukraine',
+      'Ukrainian Environmental Fund Head Meets with Forestry Experts for Forest Restoration',
     mainImg: meeting,
+    mainInfo:
+      'Alevtina Gutsal, leader of the Ukrainian Environmental Anti-Crisis Fund, addressed extensive forest damage in Ukraine caused by war, totaling nearly one million hectares. They stressed the need for interdisciplinary collaboration to rehabilitate the forest sector and protect various species.',
+    problemToSolve: [
+      "Assessing war's impact on forestry",
+      'Risk to 600 animal and 900 plant species',
+      'Urgent demining in forested areas',
+    ],
+    conclusion:
+      "The Ukrainian Environmental Anti-Crisis Fund, with partners, is working on a Memorandum of Cooperation to conserve nature and revitalize Ukraine's ecosystem",
     imagesSlider: [
       event1_1,
       event1_2,

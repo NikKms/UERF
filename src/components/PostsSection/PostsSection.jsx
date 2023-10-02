@@ -1,13 +1,4 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Container,
-  Heading,
-} from '@chakra-ui/react';
+import { Box, Container, Heading } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { Link as ChakraLink } from '@chakra-ui/react';
 
@@ -18,13 +9,13 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 import { postsData } from '../../common/data/postsData';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const PostsSection = () => {
-  const gradient = 'linear-gradient(-45deg, #4de992, #16acdf)';
+  const gradient = 'linear-gradient(-45deg, #4bc32d97, #fdfeff9f)';
 
   return (
     <>
@@ -42,38 +33,150 @@ const PostsSection = () => {
             textAlign="center"
             fontSize={{ base: '2xl', lg: '4xl' }}
             fontWeight="bold"
-            color={'white'}
+            color={'black'}
           >
             Ecosystem of care: from creation to action
           </Heading>
           <Swiper
-            autoHeight={true}
-            loop={true}
-            spaceBetween={10}
-            navigation={true}
-            modules={[FreeMode, Navigation]}
             className="mySwiper2"
+            navigation
+            loop
+            slidesPerView={'auto'}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+                slidesPerGroup: 1,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+                slidesPerGroup: 2,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+                slidesPerGroup: 1,
+              },
+            }}
+            modules={[Navigation]}
           >
             {postsData.length > 0 &&
               postsData.map(({ image, title, text }, index) => (
                 <SwiperSlide key={index}>
-                  <Accordion allowMultiple>
-                    <AccordionItem
+                  <Box
+                    shadow={'dark-lg'}
+                    position={'relative'}
+                    as="li"
+                    borderRadius={'4px'}
+                    overflow="hidden"
+                    css={{
+                      '&:hover div': {
+                        transform: 'scale(1.03)',
+                        transition: 'all 500ms, filter 500ms ease-in-out',
+                        filter: 'brightness(100%)',
+                      },
+                    }}
+                  >
+                    <ChakraLink
+                      as={ReactRouterLink}
+                      to="/news"
+                      display={'block'}
+                      textAlign={'center'}
+                      color={'#fff'}
+                      fontSize={'24px'}
+                    >
+                      <Box
+                        filter="brightness(80%)"
+                        position="relative"
+                        z-index="2"
+                        width="100%"
+                        height="260px"
+                        transition="all 500ms cubic-bezier(0.4, 0, 0.2, 1)"
+                        as="div"
+                        bgImage={`url(${image})`}
+                        bgRepeat={'no-repeat'}
+                        bgPos={'center'}
+                        bgSize={'cover'}
+                        _hover={{
+                          cursor: 'pointer',
+                          transition: 'all 500ms ease-in-out',
+                          filter: 'grayscale(100%)',
+                        }}
+                      ></Box>
+                      <Box
+                        as="div"
+                        bg="linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 15%,
+    rgba(252, 176, 69, 0) 50%
+  )"
+                        position={'absolute'}
+                        top="0"
+                        zIndex={'2'}
+                        width={'100%'}
+                        height={'100%'}
+                        display={'flex'}
+                        alignItems={'flex-end'}
+                        padding={'16px 20px'}
+                      >
+                        <Heading
+                          color={'#fff'}
+                          fontSize={'24'}
+                          textAlign={'left'}
+                        >
+                          {title}
+                        </Heading>
+                      </Box>
+                      {/* <Text>
+                      {text.split('\n').map((paragraph, paraIndex) => (
+                        <p key={paraIndex}>{paragraph}</p>
+                      ))}
+                    </Text> */}
+                    </ChakraLink>
+                  </Box>
+                </SwiperSlide>
+              ))}
+          </Swiper>
+          <ChakraLink
+            mt={'20px'}
+            as={ReactRouterLink}
+            to="/news"
+            display={'block'}
+            textAlign={'center'}
+            color={'#000'}
+            fontSize={'24px'}
+            textDecor={'underline'}
+            _hover={{ color: '#00000067' }}
+          >
+            Check more news
+            <ExternalLinkIcon mx="2px" />
+          </ChakraLink>
+        </Container>
+      </Box>
+    </>
+  );
+};
+
+export default PostsSection;
+
+{
+  /* <AccordionItem
                       position="relative"
                       overflow="hidden"
                       border="none"
                       borderRadius="10px"
                       maxW={{ base: '100%', lg: '768px', xl: '1024px' }}
                       margin={'50px auto'}
-                      css={{
-                        '&::-webkit-scrollbar': {
-                          width: '3px',
-                        },
-                        '&::-webkit-scrollbar-thumb': {
-                          backgroundColor: '#fff',
-                          borderRadius: '50%',
-                        },
-                      }}
+                      // css={{
+                      //   '&::-webkit-scrollbar': {
+                      //     width: '3px',
+                      //   },
+                      //   '&::-webkit-scrollbar-thumb': {
+                      //     backgroundColor: '#fff',
+                      //     borderRadius: '50%',
+                      //   },
+                      // }}
                       boxShadow={'lg'}
                     >
                       <h3>
@@ -127,26 +230,5 @@ const PostsSection = () => {
                         bgPos={'center'}
                         bgSize={'cover'}
                       ></Box>
-                    </AccordionItem>
-                  </Accordion>
-                </SwiperSlide>
-              ))}
-          </Swiper>
-          <ChakraLink
-            as={ReactRouterLink}
-            to="/news"
-            display={'block'}
-            textAlign={'center'}
-            color={'#fff'}
-            fontSize={'24px'}
-          >
-            Check more news
-            <ExternalLinkIcon mx="2px" />
-          </ChakraLink>
-        </Container>
-      </Box>
-    </>
-  );
-};
-
-export default PostsSection;
+                    </AccordionItem> */
+}

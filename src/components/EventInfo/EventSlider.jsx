@@ -15,8 +15,8 @@ const EventSlider = ({ data }) => {
     <Box
       as="section"
       backgroundColor="#f4f6fa"
-      paddingBottom="90px"
-      paddingTop="90px"
+      paddingBottom="70px"
+      paddingTop="70px"
     >
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
         <Swiper
@@ -27,7 +27,7 @@ const EventSlider = ({ data }) => {
           }}
           navigation={true}
           breakpoints={{
-            320: {
+            270: {
               slidesPerView: 1,
               spaceBetween: 50,
               slidesPerGroup: 1,

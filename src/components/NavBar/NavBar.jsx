@@ -18,7 +18,7 @@ const listAnimation = {
     transition: {
       delay: custom * 0.2,
       ease: 'easeOut',
-      duration: 0.5,
+      duration: 0.3,
     },
   }),
 };

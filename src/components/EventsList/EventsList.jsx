@@ -7,7 +7,7 @@ const EventsList = () => {
   return (
     <AnimateOnScroll>
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
-        <Box as="section" paddingTop="90px" paddingBottom="90px">
+        <Box as="section" paddingTop="70px" paddingBottom="70px">
           <Grid
             as={'ul'}
             templateColumns={[

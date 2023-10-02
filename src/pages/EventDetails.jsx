@@ -5,7 +5,7 @@ import bgImg from '../assets/img/eventsBg.jpg';
 const EventDetails = () => {
   return (
     <>
-      <RoutesHero bgImg={bgImg} />
+      <RoutesHero titlePath={'Title'} bgImg={bgImg} />
       <EventInfo />
     </>
   );
