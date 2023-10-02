@@ -50,7 +50,7 @@ const AboutGallery = () => {
           <WaveText
             as={motion.h2}
             fontWeight={400}
-            fontSize={'3rem'}
+       
             color="black"
             mb={'2rem'}
             textAlign="center"
