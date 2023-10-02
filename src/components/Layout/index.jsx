@@ -10,8 +10,6 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    console.log("to top")
   }, [location.pathname]);
 
 
