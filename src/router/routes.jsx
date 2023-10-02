@@ -4,6 +4,7 @@ const Events = React.lazy(() => import('../pages/Events'));
 const News = React.lazy(() => import('../pages/News'));
 const About = React.lazy(() => import('../pages/About'));
 const NotFoundPage = React.lazy(() => import('../pages/NotFoundPage'))
+const EventDetails = React.lazy(() => import('../pages/EventDetails'));
 
 export const routes = [
   {
@@ -23,7 +24,12 @@ export const routes = [
     element: <About />,
   },
   {
+    path: '/events/:id',
+    element: <EventDetails />
+  },
+  {
     path: '*',
     element: <NotFoundPage />
-  }
+  },
+
 ];

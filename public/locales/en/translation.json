@@ -19,7 +19,11 @@
     },
     "sponsors": { "title": "Our sponsors" }
   },
-  "eventPage": {},
+  "eventPage": {
+    "hero": {
+      "title": "events"
+    }
+  },
   "aboutPage": {
     "hero": {
       "title": "about"

@@ -11,9 +11,8 @@ const Home = () => {
       <Hero />
       <WhoWe />
       <PostsSection />
-      <ApplicationSection />
-      <Upcoming />
       <Sponsors />
+      <ApplicationSection />
     </>
   );
 };
