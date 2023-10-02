@@ -56,6 +56,7 @@ const WaveText = ({ children, ...props }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.8 }}
       key={languageKey}
+      fontSize={{ base: '2.3rem', sm: '3rem' }}
       {...props}
     >
       {letters &&
