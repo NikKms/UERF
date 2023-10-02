@@ -1,6 +1,9 @@
 import { Box, Container, Heading, Flex } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 
 const Sponsors = () => {
+  const { t } = useTranslation()
+
   const sponsorLogos = [
     'logo1.png',
     'logo2.png',
@@ -18,7 +21,7 @@ const Sponsors = () => {
       bg={'green.50'}
     >
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px" display={'flex'} flexDirection={'column'} gap={'48px'}>
-        <Heading textAlign={'center'}>Наші спонсори</Heading>
+        <Heading textAlign={'center'}>{t("homePage.sponsors.title")}</Heading>
         <Flex justify="space-around" align="center" flexDirection={{ base: "column", lg: "row" }}>
           {sponsorLogos.map((logo, index) => (
             <Box

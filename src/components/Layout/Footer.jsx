@@ -2,14 +2,12 @@ import { Box, Container, Text } from '@chakra-ui/react';
 import React from 'react';
 import logoSvg from '../../assets/svg/logo.svg';
 import FooterAbout from '../FooterAbout/FooterAbout';
-import NavBar from '../NavBar/NavBar';
 import logoSvgEn from '../../assets/svg/logo_en.svg';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { i18n } = useTranslation();
-  const gradient = 'linear-gradient(0deg, #0b1731, #48b0b0)';
 
   return (
     <Box
@@ -18,7 +16,7 @@ const Footer = () => {
       bgColor='teal'
       color='white'
       py='16px'
-      background={gradient}
+      backgroundColor="#080d27"
       borderTop='1px'
       borderTopColor='teal.900'
     >
@@ -28,21 +26,15 @@ const Footer = () => {
         display='flex'
         flexDirection={{ base: 'column', md: 'row' }}
         alignItems='center'
-        justifyContent='space-between'
+        justifyContent='space-around'
         gap='32px'
       >
         <Link to="/">
-          <Box w='14rem'>
+          <Box w='11rem'>
             <img src={i18n.language === 'ua' ? logoSvg : logoSvgEn} alt="Logo" />
           </Box>
         </Link>
         <FooterAbout />
-        <NavBar
-          flexDir='column'
-          color='white'
-          fontSize='md'
-          align='center'
-        />
       </Container>
 
       <Box

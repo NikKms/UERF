@@ -10,6 +10,7 @@ import {
   Input,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+import { ForumIcon } from '../../common/icons/ForumIcon';
 
 export const ContactForm = () => {
   const { t, i18n } = useTranslation();
@@ -48,16 +49,25 @@ export const ContactForm = () => {
             style={{
               position: 'relative',
               backgroundColor: '#fff',
-              padding: '40px',
+              padding: '30px',
               zIndex: 2,
             }}
           >
-            <Heading mb={30}>Подати заявку</Heading>
+            <Heading
+              mb={30}
+              textTransform="uppercase"
+              as="h3"
+              fontSize="30px"
+              color="#003d7c"
+            >
+              Подати заявку
+            </Heading>
             <Flex gap="30px" mb="30px" flexWrap="wrap">
               <Field name="name">
                 {({ field, form }) => (
                   <FormControl
                     w={{
+                      base: '100%',
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
@@ -71,6 +81,7 @@ export const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     w={{
+                      base: '100%',
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
@@ -89,6 +100,7 @@ export const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     w={{
+                      base: '100%',
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
@@ -117,7 +129,7 @@ export const ContactForm = () => {
                 </FormControl>
               )}
             </Field>
-            <Flex mt="30px">
+            <Flex mt="30px" justifyContent="space-between">
               <Button
                 onSubmit={handleSubmit}
                 minW={210}

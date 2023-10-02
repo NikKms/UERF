@@ -12,8 +12,10 @@ import ImgModal from './ImgModal';
 import SetGrid from './setGrid';
 import WaveText from '../WaveText/WaveText';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const AboutGallery = () => {
+  const { t } = useTranslation();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -48,12 +50,13 @@ const AboutGallery = () => {
           <WaveText
             as={motion.h2}
             fontWeight={400}
-            fontSize={'3rem'}
+       
             color="black"
             mb={'2rem'}
             textAlign="center"
+            textTransform="capitalize"
           >
-            Gallery
+            {t('aboutPage.gallery.title')}
           </WaveText>
           <Grid
             templateColumns={{
@@ -71,7 +74,11 @@ const AboutGallery = () => {
                   variant="unstyled"
                   w={'100%'}
                   h={'100%'}
-                  _hover={{ bg: 'transparent', transform: 'scale(1.01)' }}
+                  _hover={{
+                    bg: 'transparent',
+                    transform: 'scale(1.01)',
+                    transition: 'transform 0.4s',
+                  }}
                   _active={{ bg: 'transparent' }}
                   onClick={() => openModal(index)}
                 >

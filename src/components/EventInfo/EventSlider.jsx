@@ -44,7 +44,7 @@ const EventSlider = ({ data }) => {
             },
           }}
           modules={[Pagination, Navigation]}
-          className="mySwiper"
+          className="Swiper1"
         >
           {data.imagesSlider.map((image, index) => (
             <SwiperSlide key={index}>

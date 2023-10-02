@@ -20,7 +20,6 @@ const RoutesHero = ({ titlePath, bgImg }) => {
       >
         <WaveText
           style={{
-            fontSize: '3rem',
             fontWeight: '500',
             color: '#fff',
             textTransform: 'uppercase',

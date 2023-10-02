@@ -17,7 +17,7 @@ const EventInfo = () => {
   return (
     <>
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
-        <Box as="section" paddingTop="70px" paddingBottom="70px">
+        <Box as="section" paddingTop="100px" paddingBottom="70px">
           <Heading
             as="h2"
             color="#000000"
