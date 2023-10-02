@@ -6,6 +6,7 @@ import whowe from '../../assets/img/whowe.jpg';
 import whowemain from '../../assets/img/whowemain.jpg';
 import whowe2 from '../../assets/img/whowe2.jpg';
 import Btn from "../Btn/Btn";
+import { useTranslation } from "react-i18next";
 
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
@@ -13,7 +14,13 @@ const MotionText = motion(Text);
 const images = [whowe, whowemain, whowe2];
 
 const WhoWe = () => {
+    const { t } = useTranslation()
 
+    const slogans = [
+        t('homePage.aboutUs.slogan.el1'),
+        t('homePage.aboutUs.slogan.el2'),
+        t('homePage.aboutUs.slogan.el3'),
+    ];
 
     return (
         <Box as="section" py={{ base: '36px', lg: '72px', xl: '90px' }}>
@@ -38,7 +45,7 @@ const WhoWe = () => {
                     position="relative"
                 >
 
-                    Український екологічний антикризовий фонд
+                    {t('homePage.aboutUs.title')}
 
                 </MotionHeading>
                 <MotionText
@@ -46,12 +53,22 @@ const WhoWe = () => {
                     animate="visible"
                     fontSize={{ base: 'md', lg: 'lg' }}
                 >
-                    – це команда однодумців: екологів, екоактивістів, фахівців установ та відомств екологічного напрямку, небайдужих українців, які усвідомлюють усі жахливі наслідки повномасштабної ворожої агресії для екологічної ситуації в Україні.
+                    {t('homePage.aboutUs.description')}
                 </MotionText>
 
                 <Flex wrap="wrap" justifyContent="space-between">
                     {images.map((image, index) => (
-                        <Box key={index} w={"30%"} h={'150px'} bgImage={image} bgRepeat={'no-repeat'} bgPosition={'center'} bgSize={'cover'} mb={4} borderRadius={'lg'}>
+                        <Box
+                            key={index}
+                            w={"30%"}
+                            h={'150px'}
+                            bgImage={image}
+                            bgRepeat={'no-repeat'}
+                            bgPosition={'center'}
+                            bgSize={'cover'}
+                            mb={4}
+                            borderRadius={'lg'}
+                        >
                             <MotionText
                                 initial="hidden"
                                 animate="visible"
@@ -61,7 +78,7 @@ const WhoWe = () => {
                                 p={4}
                                 color="white"
                             >
-                                слоган
+                                {slogans[index]}
                             </MotionText>
                         </Box>
                     ))}

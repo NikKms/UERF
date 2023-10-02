@@ -1,5 +1,4 @@
 import { ApplicationSection } from '../components/ApplicationSection/ApplicationSection';
-import { ContactForm } from '../components/ContactForm/ContactForm';
 import Hero from '../components/Hero/Hero';
 import PostsSection from '../components/PostsSection/PostsSection';
 import Sponsors from '../components/Sponsors/Sponsors';
@@ -12,9 +11,8 @@ const Home = () => {
       <Hero />
       <WhoWe />
       <PostsSection />
-      <ApplicationSection />
-      <Upcoming />
       <Sponsors />
+      <ApplicationSection />
     </>
   );
 };
