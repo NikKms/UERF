@@ -6,7 +6,7 @@ const EventDetails = () => {
   return (
     <>
       <RoutesHero bgImg={bgImg} />
-      <EventInfo />;
+      <EventInfo />
     </>
   );
 };
