@@ -32,7 +32,7 @@ export const ApplicationSection = () => {
         pt="40px"
         pb="40px"
         gap="15px"
-        zIndex="22"
+        zIndex="3"
         backgroundColor="#fff3"
       >
         <Box w={{ base: '100%', lg: 'calc((100% - 15px) / 2)' }} padding="15px">
