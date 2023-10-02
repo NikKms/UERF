@@ -13,46 +13,40 @@ const Footer = () => {
 
   return (
     <Box
-      as='footer'
-      width='100%'
-      bgColor='teal'
-      color='white'
-      py='16px'
+      as="footer"
+      width="100%"
+      bgColor="teal"
+      color="white"
+      py="16px"
       background={gradient}
-      borderTop='1px'
-      borderTopColor='teal.900'
+      borderTop="1px"
+      borderTopColor="teal.900"
     >
       <Container
-        maxW='1176px'
-        mx='auto'
-        display='flex'
+        maxW="1176px"
+        mx="auto"
+        display="flex"
         flexDirection={{ base: 'column', md: 'row' }}
-        alignItems='center'
-        justifyContent='space-between'
-        gap='32px'
+        alignItems="center"
+        justifyContent="space-between"
+        gap="32px"
       >
         <Link to="/">
-          <Box w='14rem'>
-            <img src={i18n.language === 'ua' ? logoSvg : logoSvgEn} alt="Logo" />
+          <Box w="14rem">
+            <img
+              src={i18n.language === 'ua' ? logoSvg : logoSvgEn}
+              alt="Logo"
+            />
           </Box>
         </Link>
         <FooterAbout />
-        <NavBar
-          flexDir='column'
-          color='white'
-          fontSize='md'
-          align='center'
-        />
+        <NavBar flexDir="column" color="white" fontSize="md" align="center" />
       </Container>
 
-      <Box
-        mt='24px'
-        textAlign='center'
-      >
-        <Text fontSize='sm' opacity='0.8'>
+      <Box mt="24px" textAlign="center">
+        <Text fontSize="sm" opacity="0.8">
           © 2023 <a href="your_link_here">SevenTy</a>. All rights reserved.
         </Text>
-
       </Box>
     </Box>
   );
