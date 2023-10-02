@@ -11,40 +11,43 @@ const Footer = () => {
 
   return (
     <Box
-      as='footer'
-      width='100%'
-      bgColor='teal'
-      color='white'
-      py='16px'
+      as="footer"
+      width="100%"
+      bgColor="teal"
+      color="white"
+      py="16px"
       backgroundColor="#080d27"
-      borderTop='1px'
-      borderTopColor='teal.900'
+      borderTop="1px"
+      borderTopColor="teal.900"
     >
       <Container
-        maxW='1176px'
-        mx='auto'
-        display='flex'
+        maxW="1176px"
+        mx="auto"
+        display="flex"
         flexDirection={{ base: 'column', md: 'row' }}
-        alignItems='center'
-        justifyContent='space-around'
-        gap='32px'
+        alignItems="center"
+        justifyContent="space-around"
+        gap="32px"
       >
         <Link to="/">
-          <Box w='11rem'>
-            <img src={i18n.language === 'ua' ? logoSvg : logoSvgEn} alt="Logo" />
+          <Box w="11rem">
+            <img
+              src={i18n.language === 'ua' ? logoSvg : logoSvgEn}
+              alt="Logo"
+            />
           </Box>
         </Link>
         <FooterAbout />
       </Container>
 
-      <Box
-        mt='24px'
-        textAlign='center'
-      >
-        <Text fontSize='sm' opacity='0.8' >
-          © 2023 <Box as='a' _hover={{ color: "teal.400" }} href="your_link_here">SevenTy</Box>. All rights reserved.
+      <Box mt="24px" textAlign="center">
+        <Text fontSize="sm" opacity="0.8">
+          © 2023{' '}
+          <Box as="a" _hover={{ color: 'teal.400' }} href="your_link_here">
+            SevenTy
+          </Box>
+          . All rights reserved.
         </Text>
-
       </Box>
     </Box>
   );

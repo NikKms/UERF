@@ -13,9 +13,15 @@ import { Navigation } from 'swiper/modules';
 
 import { postsData } from '../../common/data/postsData';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { useTranslation } from 'react-i18next';
 
 const PostsSection = () => {
-  const gradient = 'linear-gradient(-45deg, #4bc32d97, #fdfeff9f)';
+  const { t } = useTranslation();
+  const news = t('newsPage.newsData', {
+    returnObjects: true,
+  });
+
+  const gradient = 'linear-gradient(-45deg,#fdfeff9f, #4bc32d97)';
 
   return (
     <>
@@ -35,7 +41,7 @@ const PostsSection = () => {
             fontWeight="bold"
             color={'black'}
           >
-            Ecosystem of care: from creation to action
+            {t('newsPage.title')}
           </Heading>
           <Swiper
             className="mySwiper2"
@@ -61,17 +67,17 @@ const PostsSection = () => {
             }}
             modules={[Navigation]}
           >
-            {postsData.length > 0 &&
-              postsData.map(({ image, title, text }, index) => (
+            {news.length > 0 &&
+              news.map(({ title }, index) => (
                 <SwiperSlide key={index}>
                   <Box
                     shadow={'dark-lg'}
                     position={'relative'}
                     as="li"
-                    borderRadius={'4px'}
+                    borderRadius={'10px'}
                     overflow="hidden"
                     css={{
-                      '&:hover div': {
+                      '&:hover .news_card': {
                         transform: 'scale(1.03)',
                         transition: 'all 500ms, filter 500ms ease-in-out',
                         filter: 'brightness(100%)',
@@ -83,10 +89,13 @@ const PostsSection = () => {
                       to="/news"
                       display={'block'}
                       textAlign={'center'}
-                      color={'#fff'}
+                      color={'#ffffffc2'}
                       fontSize={'24px'}
+                      borderRadius={'10px'}
                     >
                       <Box
+                        borderRadius={'10px'}
+                        className="news_card"
                         filter="brightness(80%)"
                         position="relative"
                         z-index="2"
@@ -94,7 +103,7 @@ const PostsSection = () => {
                         height="260px"
                         transition="all 500ms cubic-bezier(0.4, 0, 0.2, 1)"
                         as="div"
-                        bgImage={`url(${image})`}
+                        bgImage={`url(${postsData[index].image})`}
                         bgRepeat={'no-repeat'}
                         bgPos={'center'}
                         bgSize={'cover'}
@@ -105,6 +114,7 @@ const PostsSection = () => {
                         }}
                       ></Box>
                       <Box
+                        borderRadius={'10px'}
                         as="div"
                         bg="linear-gradient(
     0deg,
@@ -128,11 +138,6 @@ const PostsSection = () => {
                           {title}
                         </Heading>
                       </Box>
-                      {/* <Text>
-                      {text.split('\n').map((paragraph, paraIndex) => (
-                        <p key={paraIndex}>{paragraph}</p>
-                      ))}
-                    </Text> */}
                     </ChakraLink>
                   </Box>
                 </SwiperSlide>
@@ -149,7 +154,7 @@ const PostsSection = () => {
             textDecor={'underline'}
             _hover={{ color: '#00000067' }}
           >
-            Check more news
+            {t('newsPage.underButton')}
             <ExternalLinkIcon mx="2px" />
           </ChakraLink>
         </Container>
