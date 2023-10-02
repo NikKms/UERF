@@ -14,9 +14,30 @@
   "aboutPage": {
     "hero": {
       "title": "about"
-    }, 
+    },
     "solutions": {
-      "title": "save 123123"
+      "title": "working solutions",
+      "list": {
+        "forest": {
+          "title": "save our forest",
+          "text": ""
+        },
+        "water": {
+          "title": "water refine",
+          "text": ""
+        },
+        "animals": {
+          "title": "save animals",
+          "text": ""
+        },
+        "eco": {
+          "title": "eco system",
+          "text": ""
+        }
+      }
+    },
+    "gallery": {
+      "title": "gallery"
     }
   },
   "footer": {},
