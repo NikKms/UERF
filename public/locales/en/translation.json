@@ -33,19 +33,19 @@
       "list": {
         "forest": {
           "title": "save our forest",
-          "text": ""
+          "text": "Forests are legendary treasures of nature. We work on multiple fronts to conserve and restore forest ecosystems."
         },
         "water": {
           "title": "water refine",
-          "text": ""
+          "text": "Water is a vital resource for life. We aim to ensure clean water for all and combat water pollution."
         },
         "animals": {
           "title": "save animals",
-          "text": ""
+          "text": "Biodiversity is a crucial part of our nature. We strive to protect and restore animal populations."
         },
         "eco": {
           "title": "eco system",
-          "text": ""
+          "text": "Balanced ecosystems are the foundation of life on Earth. We work to preserve and restore the ecological balance."
         }
       }
     },
