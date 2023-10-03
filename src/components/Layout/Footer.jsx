@@ -40,15 +40,14 @@ const Footer = () => {
         <FooterAbout />
       </Container>
 
-      <Box mt="24px" textAlign="center">
-        <Text fontSize="sm" opacity="0.8">
-          © 2023{' '}
-          <Box as="a" _hover={{ color: 'teal.400' }} href="your_link_here">
-            SevenTy
-          </Box>
-          . All rights reserved.
-        </Text>
-      </Box>
+
+      <Box as='a'
+        _hover={{ color: "teal.400" }}
+        w={'260px'}
+        textAlign='center'
+        display={"block"}
+        m="24px auto 0 auto" href="mailto:7ty@gmail.com"> ©2023 SevenTy. All rights reserved.</Box>
+
     </Box>
   );
 };
