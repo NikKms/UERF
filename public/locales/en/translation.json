@@ -95,13 +95,20 @@
     }
   },
   "contactForm": {
+    "contactTitle": "Submit an application",
+    "placeholderName": "Name",
+    "placeholderPhone": "Phone",
+    "placeholderEmail": "Email",
+    "placeholderMessage": "Message",
+    "btnText": "Send",
     "ErrorMessages": {
       "errorName": "Enter a name",
       "phoneIsNotCorrect": "Please enter a valid phone number",
       "errorPhone": "Enter a phone number",
       "emailIsNotCorrect": "The email address is incorrect",
       "errrorEmail": "Enter your email address"
-    }
+    },
+    "rightBlTitle": "Take a step towards a sustainable future for our children."
   },
   "newsPage": {
     "title": "Ecosystem of care: from creation to action",

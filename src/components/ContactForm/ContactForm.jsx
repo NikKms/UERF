@@ -74,7 +74,7 @@ export const ContactForm = () => {
               fontSize="30px"
               color="#003d7c"
             >
-              Подати заявку
+              {t('contactForm.contactTitle')}
             </Heading>
             <Flex gap="30px" mb="30px" flexWrap="wrap">
               <Field name="name">
@@ -88,7 +88,11 @@ export const ContactForm = () => {
                     isInvalid={errors.name}
                   >
                     {/* <FormLabel>{t('contactForm.name')}</FormLabel> */}
-                    <Input {...field} placeholder="Ім'я" bgColor="#fff" />
+                    <Input
+                      {...field}
+                      placeholder={t('contactForm.placeholderName')}
+                      bgColor="#fff"
+                    />
                     {errors.name && touched.name ? (
                       <FormErrorMessage>{t(errors.name)}</FormErrorMessage>
                     ) : null}
@@ -108,7 +112,7 @@ export const ContactForm = () => {
                     {/* <FormLabel>Телефон *</FormLabel> */}
                     <Input
                       {...field}
-                      placeholder="Телефон *"
+                      placeholder={t('contactForm.placeholderPhone')}
                       bgColor="#fff"
                       w="100%"
                     />
@@ -129,7 +133,11 @@ export const ContactForm = () => {
                     isInvalid={errors.email}
                   >
                     {/* <FormLabel>E-mail *</FormLabel> */}
-                    <Input {...field} placeholder="Ваш е-mail" bgColor="#fff" />
+                    <Input
+                      {...field}
+                      placeholder={t('contactForm.placeholderEmail')}
+                      bgColor="#fff"
+                    />
                     {console.log(errors.email)}
                     {errors.email && touched.email ? (
                       <FormErrorMessage>{t(errors.email)}</FormErrorMessage>
@@ -143,7 +151,7 @@ export const ContactForm = () => {
                 <FormControl>
                   <Input
                     {...field}
-                    placeholder="Текст повідомлення"
+                    placeholder={t('contactForm.placeholderMessage')}
                     as="textarea"
                     h={200}
                     rows={7}
@@ -168,7 +176,7 @@ export const ContactForm = () => {
                 isLoading={isSubmitting}
                 type="submit"
               >
-                Відправити
+                {t('contactForm.btnText')}
               </Button>
             </Flex>
           </Form>
