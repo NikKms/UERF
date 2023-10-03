@@ -95,10 +95,9 @@ const EventsItem = ({ event: { id, timeAndPlace, title }, index }) => {
 
 EventsItem.propTypes = {
   event: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    timeAndPlace: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    timeAndPlace: PropTypes.string,
+    title: PropTypes.string,
   }).isRequired,
   index: PropTypes.number,
 };
