@@ -11,7 +11,12 @@ import { Box } from '@chakra-ui/react';
 // eslint-disable-next-line react/prop-types
 const ImgModal = ({ isOpen, onClose, showNext, img }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered={true} size="6xl">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      isCentered={true}
+      size={{ base: 'xl', lg: "6xl" }}
+    >
       <ModalOverlay />
       <ModalContent backgroundColor="transparent" boxShadow="none">
         <ModalBody>
@@ -20,7 +25,7 @@ const ImgModal = ({ isOpen, onClose, showNext, img }) => {
               <img
                 src={img}
                 alt={`Image ${img}`}
-                style={{ width: '100%', height: '600px' }}
+                style={{ width: '100%', height: '100%' }}
               />
             </Box>
           )}

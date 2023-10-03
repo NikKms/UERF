@@ -85,7 +85,7 @@ const AboutProblemsList = () => {
   }, [t, i18n.resolvedLanguage]);
 
   return (
-    <AnimateOnScroll key={languageKey}>
+    <AnimateOnScroll lang={languageKey}>
       <Grid
         as={motion.ul}
         templateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }}
