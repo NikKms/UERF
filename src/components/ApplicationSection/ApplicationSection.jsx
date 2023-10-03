@@ -12,8 +12,10 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import bg from '../../assets/img/calling.jpg';
 // import contactFormImg from '../../assets/img/contactForm.png';
 import ForumSvg from '../../assets/svg/forum-logo.svg';
+import { useTranslation } from 'react-i18next';
 
 export const ApplicationSection = forwardRef(({ refToContactForm }, _) => {
+  const { t } = useTranslation();
   return (
     <Box
       as="section"
@@ -56,7 +58,7 @@ export const ApplicationSection = forwardRef(({ refToContactForm }, _) => {
             maxW="387px"
             fontSize={{ base: '2xl', lg: '3xl' }}
           >
-            Зробіть крок до стійкого майбутнього наших дітей.
+            {t('contactForm.rightBlTitle')}
           </Heading>
           {/* <Image src={contactFormImg} opacity={0.9} /> */}
           <Image

@@ -95,13 +95,20 @@
     }
   },
   "contactForm": {
+    "contactTitle": "Подати заявку",
+    "placeholderName": "Ім'я",
+    "placeholderPhone": "Телефон",
+    "placeholderEmail": "Пошта",
+    "placeholderMessage": "Повідомлення",
+    "btnText": "Надіслати",
     "ErrorMessages": {
       "errorName": "Введіть ім'я",
       "phoneIsNotCorrect": "Введіть дійсний номер телефону",
       "errorPhone": "Введіть номер телефону",
       "emailIsNotCorrect": "Введіть коректну адресу електронної пошти",
       "errrorEmail": "Введіть адресу вашої електронної пошти"
-    }
+    },
+    "rightBlTitle": "Зробіть крок до стійкого майбутнього наших дітей."
   },
   "newsPage": {
     "title": "Екосистема дбайливості: від створення до дії",
