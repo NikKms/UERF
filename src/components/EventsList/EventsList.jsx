@@ -1,9 +1,16 @@
 import { Box, Container, Grid } from '@chakra-ui/react';
 import EventsItem from './EventsItem';
 import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
-import eventsList from '../../common/data/card-events';
+
+import { useTranslation } from 'react-i18next';
 
 const EventsList = () => {
+  const { t } = useTranslation();
+
+  const eventShort = t('eventPage.eventCard', {
+    returnObjects: true,
+  });
+
   return (
     <AnimateOnScroll>
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
@@ -20,7 +27,7 @@ const EventsList = () => {
             gap={6}
             rowGap={50}
           >
-            {eventsList.map(event => (
+            {eventShort.map(event => (
               <EventsItem key={event.id} event={event} />
             ))}
           </Grid>

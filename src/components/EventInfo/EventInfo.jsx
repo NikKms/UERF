@@ -1,27 +1,46 @@
 import EventSlider from './EventSlider';
-import eventFullInfo from '../../common/data/eventFullInfo';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams, Link } from 'react-router-dom';
+import { ApplicationSection } from '../ApplicationSection/ApplicationSection';
 import {
   Box,
   Container,
   Heading,
+  Icon,
   Img,
   ListItem,
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
+import { useRef } from 'react';
+import './eventInfo.css';
+import { BsArrowLeft } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next';
 
 const EventInfo = () => {
   const { id } = useParams();
+  const { t } = useTranslation();
+  const location = useLocation();
+  const backLinkHref = useRef(location.state?.from ?? '/');
+
+  const eventFullInfo = t('eventPage.eventFullInfo', {
+    returnObjects: true,
+  });
+
   const selectedEvent = eventFullInfo.find(event => event.id === id);
   return (
     <>
-      <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
-        <Box as="section" paddingTop="100px" paddingBottom="70px">
+      <Box as="section" paddingTop="100px" paddingBottom="70px">
+        <Container
+          maxW={{ base: '744px', lg: '1000px', xl: '1176px' }}
+          px="12px"
+        >
+          <Link className="styledLinkBack" to={backLinkHref.current}>
+            <Icon as={BsArrowLeft} />
+            {t('eventPage.back')}
+          </Link>
           <Heading
             as="h2"
             color="#000000"
-            textTransform="capitalize"
             fontSize="28px"
             marginBottom={'20px'}
             lineHeight="40px"
@@ -34,7 +53,7 @@ const EventInfo = () => {
               objectFit={'cover'}
               marginBottom={{ base: '20px', lg: '0' }}
               width="600px"
-              height="400px"
+              max-height="400px"
               src={selectedEvent.mainImg}
               alt={selectedEvent.title}
             />
@@ -48,17 +67,14 @@ const EventInfo = () => {
                 lineHeight="40px"
                 fontWeight="700"
               >
-                Issues to address
+                {selectedEvent?.problemToSolveHeading}
               </Heading>
-              <Text fontSize={16}>
-                {selectedEvent.problemToSolve.map((problem, index) => {
-                  return (
-                    <UnorderedList key={index}>
-                      <ListItem>{problem}</ListItem>
-                    </UnorderedList>
-                  );
-                })}
-              </Text>
+              <UnorderedList fontSize={16}>
+                {selectedEvent.problemToSolve &&
+                  selectedEvent.problemToSolve.map((problem, index) => {
+                    return <ListItem key={index}>{problem}</ListItem>;
+                  })}
+              </UnorderedList>
               <Heading
                 as="h3"
                 color="#000000"
@@ -67,14 +83,18 @@ const EventInfo = () => {
                 lineHeight="40px"
                 fontWeight="700"
               >
-                Сonclusions
+                {selectedEvent.conclusionHeading}
               </Heading>
               <Text fontSize={16}>{selectedEvent.conclusion}</Text>
             </Box>
           </Box>
-        </Box>
-      </Container>
-      <EventSlider key={selectedEvent.id} data={selectedEvent} />
+        </Container>
+      </Box>
+      {selectedEvent.imagesSlider ? (
+        <EventSlider key={selectedEvent.id} data={selectedEvent} />
+      ) : (
+        <ApplicationSection />
+      )}
     </>
   );
 };
