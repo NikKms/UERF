@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 // eslint-disable-next-line react/prop-types
-const AnimateOnScroll = ({ children, variant, key }) => {
+const AnimateOnScroll = ({ children, variant, lang }) => {
   return (
     <motion.div
       initial="offscreen"
@@ -9,7 +9,7 @@ const AnimateOnScroll = ({ children, variant, key }) => {
       transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
       viewport={{ once: true, amount: window.innerWidth > 767 ? 0.5 : 0.2 }}
       variants={variant}
-      key={key}
+      key={lang}
     >
       {children}
     </motion.div>
