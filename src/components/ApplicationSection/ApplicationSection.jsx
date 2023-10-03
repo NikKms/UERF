@@ -7,15 +7,21 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { ContactForm } from '../ContactForm/ContactForm';
 import bg from '../../assets/img/calling.jpg';
 import contactFormImg from '../../assets/img/contactForm.png';
 import ForumSvg from '../../assets/svg/forum-logo.svg';
 
-export const ApplicationSection = () => {
+export const ApplicationSection = forwardRef(({ refToContactForm }) => {
   return (
-    <Box as="section" maxW={'full'} backgroundImage={bg} position="relative">
+    <Box
+      as="section"
+      maxW={'full'}
+      backgroundImage={bg}
+      position="relative"
+      ref={refToContactForm}
+    >
       <Box
         position="absolute"
         background="linear-gradient(-45deg, rgb(255 254 10 / 31%), rgb(22 172 223 / 61%))"
@@ -74,4 +80,4 @@ export const ApplicationSection = () => {
       </Container>
     </Box>
   );
-};
+});
