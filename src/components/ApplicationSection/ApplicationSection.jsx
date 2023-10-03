@@ -10,10 +10,10 @@ import {
 import React, { forwardRef } from 'react';
 import { ContactForm } from '../ContactForm/ContactForm';
 import bg from '../../assets/img/calling.jpg';
-import contactFormImg from '../../assets/img/contactForm.png';
+// import contactFormImg from '../../assets/img/contactForm.png';
 import ForumSvg from '../../assets/svg/forum-logo.svg';
 
-export const ApplicationSection = forwardRef(({ refToContactForm }) => {
+export const ApplicationSection = forwardRef(({ refToContactForm }, _) => {
   return (
     <Box
       as="section"

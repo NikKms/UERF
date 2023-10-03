@@ -11,7 +11,7 @@ import {
   Input,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { ForumIcon } from '../../common/icons/ForumIcon';
+// import { ForumIcon } from '../../common/icons/ForumIcon';
 import { object, string, number } from 'yup';
 
 export const ContactForm = () => {
@@ -34,7 +34,7 @@ export const ContactForm = () => {
       validationSchema={contactSchema}
       onSubmit={(values, actions) => {
         setTimeout(() => {
-          console.log(values);
+          // console.log(values);
           actions.setSubmitting(false);
         }, 1000);
       }}

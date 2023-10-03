@@ -1,14 +1,14 @@
 import Slider from '../Slider/Slider';
 import heroBgArr from '../../common/data/sliderBgArr';
-import { Box, Heading, useDisclosure } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 import HeroBtn from '../HeroBtn/HeroBtn';
-import { ModalContact } from '../ModalContact/ModalContact';
-import { ContactForm } from '../ContactForm/ContactForm';
+// import { ModalContact } from '../ModalContact/ModalContact';
+// import { ContactForm } from '../ContactForm/ContactForm';
 import { ForumIcon } from '../../common/icons/ForumIcon';
 import { useTranslation } from 'react-i18next';
 
 const Hero = ({ handleClick }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   const { t } = useTranslation();
 
   return (

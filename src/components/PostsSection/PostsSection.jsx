@@ -1,5 +1,5 @@
 import { Box, Container, Heading } from '@chakra-ui/react';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink, useParams } from 'react-router-dom';
 import { Link as ChakraLink } from '@chakra-ui/react';
 
 import './PostsSection.css';
@@ -14,6 +14,7 @@ import { Navigation } from 'swiper/modules';
 import { postsData } from '../../common/data/postsData';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'react-i18next';
+import { useRef } from 'react';
 
 const PostsSection = () => {
   const { t } = useTranslation();
