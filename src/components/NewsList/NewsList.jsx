@@ -20,7 +20,8 @@ const NewsList = () => {
         });
       }
     }
-  }, [posts.length]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <Box
       as="section"
