@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 
 const PostsSection = () => {
   const { t } = useTranslation();
-  const news = t('newsPage.newsData', {
+  const posts = t('newsPage.newsData', {
     returnObjects: true,
   });
 
@@ -67,8 +67,9 @@ const PostsSection = () => {
             }}
             modules={[Navigation]}
           >
-            {news.length > 0 &&
-              news.map(({ title }, index) => (
+            {posts.length > 0 &&
+              postsData.length > 0 &&
+              posts.map(({ title }, index) => (
                 <SwiperSlide key={index}>
                   <Box
                     shadow={'dark-lg'}
@@ -86,7 +87,7 @@ const PostsSection = () => {
                   >
                     <ChakraLink
                       as={ReactRouterLink}
-                      to="/news"
+                      to={`/news#${index}`}
                       display={'block'}
                       textAlign={'center'}
                       color={'#ffffffc2'}
@@ -143,6 +144,7 @@ const PostsSection = () => {
                 </SwiperSlide>
               ))}
           </Swiper>
+
           <ChakraLink
             mt={'20px'}
             as={ReactRouterLink}
@@ -164,76 +166,3 @@ const PostsSection = () => {
 };
 
 export default PostsSection;
-
-{
-  /* <AccordionItem
-                      position="relative"
-                      overflow="hidden"
-                      border="none"
-                      borderRadius="10px"
-                      maxW={{ base: '100%', lg: '768px', xl: '1024px' }}
-                      margin={'50px auto'}
-                      // css={{
-                      //   '&::-webkit-scrollbar': {
-                      //     width: '3px',
-                      //   },
-                      //   '&::-webkit-scrollbar-thumb': {
-                      //     backgroundColor: '#fff',
-                      //     borderRadius: '50%',
-                      //   },
-                      // }}
-                      boxShadow={'lg'}
-                    >
-                      <h3>
-                        <AccordionButton
-                          bgColor="#f2e1c1"
-                          _hover={{ bgColor: '#d4b174', color: '#fff' }}
-                          _active={{ bgColor: '#d4b174', color: '#fff' }}
-                          _focus={{ bgColor: '#d4b174', color: '#fff' }}
-                        >
-                          <Box
-                            as="span"
-                            flex="1"
-                            textAlign="left"
-                            fontWeight="600"
-                            fontSize="24px"
-                          >
-                            {title}
-                          </Box>
-                          <AccordionIcon fontSize={'2.25rem'} />
-                        </AccordionButton>
-                      </h3>
-
-                      <AccordionPanel
-                        pb={4}
-                        opacity={'0.9'}
-                        borderBottomRadius="10px"
-                        color="#fff"
-                      >
-                        {text.split('\n').map((paragraph, paraIndex) => (
-                          <p key={paraIndex}>{paragraph}</p>
-                        ))}
-
-                        <Box
-                          w={'100%'}
-                          h={'100%'}
-                          blur={'2px'}
-                          filter={'auto'}
-                          bgColor={'blackAlpha.200'}
-                          position={'absolute'}
-                          top={'0'}
-                          left={'0'}
-                          borderBottomRadius={'10px'}
-                        />
-                      </AccordionPanel>
-                      <Box
-                        width="100%"
-                        height="480px"
-                        as="div"
-                        bgImage={`url(${image})`}
-                        bgRepeat={'no-repeat'}
-                        bgPos={'center'}
-                        bgSize={'cover'}
-                      ></Box>
-                    </AccordionItem> */
-}

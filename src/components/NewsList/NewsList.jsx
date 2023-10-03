@@ -1,12 +1,26 @@
 import { Box, Container, Heading, Image, VStack } from '@chakra-ui/react';
 import { postsData } from '../../common/data/postsData';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const NewsList = () => {
   const { t } = useTranslation();
-  const news = t('newsPage.newsData', {
+  const posts = t('newsPage.newsData', {
     returnObjects: true,
   });
+
+  useEffect(() => {
+    const hashIndex = parseInt(window.location.hash.substring(1), 10);
+
+    if (!isNaN(hashIndex) && hashIndex >= 0 && hashIndex < posts.length) {
+      const element = document.getElementById(hashIndex.toString());
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [posts.length]);
   return (
     <Box
       as="section"
@@ -16,10 +30,12 @@ const NewsList = () => {
     >
       <Container maxW={{ base: '744px', lg: '1000px', xl: '1176px' }} px="12px">
         <VStack as={'ul'} gap={0} align="stretch" listStyleType={'none'}>
-          {news.length > 0 &&
-            news.map(({ title, text }, index) => (
+          {posts.length > 0 &&
+            postsData.length > 0 &&
+            posts.map(({ title, text }, index) => (
               <Box
                 as={'li'}
+                id={index}
                 key={index}
                 bgColor={index % 2 === 0 ? 'gray.200' : 'gray.300'}
                 p={'20px'}
@@ -49,7 +65,11 @@ const NewsList = () => {
                     alignItems={'center'}
                     flex={'1'}
                   >
-                    <Image src={postsData[index].image} />
+                    <Image
+                      src={postsData[index].image}
+                      alt={title}
+                      loading="lazy"
+                    />
                   </Box>
                 </Box>
 
