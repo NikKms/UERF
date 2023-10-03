@@ -44,13 +44,13 @@ const EventSlider = ({ data }) => {
             },
           }}
           modules={[Pagination, Navigation]}
-          className="Swiper1"
         >
-          {data.imagesSlider.map((image, index) => (
-            <SwiperSlide key={index}>
-              <img src={image} alt={`Slide ${index + 1}`} />
-            </SwiperSlide>
-          ))}
+          {data.imagesSlider &&
+            data.imagesSlider.map((image, index) => (
+              <SwiperSlide key={index}>
+                <img src={image} alt={`Slide ${index + 1}`} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </Container>
     </Box>
