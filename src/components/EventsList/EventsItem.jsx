@@ -1,8 +1,12 @@
 import { GridItem, Box, Heading, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
+import meeting from '../../assets/img/meeting.jpg';
+import logo from '../../assets/svg/forum-logo.svg';
 
-const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
+const images = [logo, meeting];
+
+const EventsItem = ({ event: { id, timeAndPlace, title }, index }) => {
   const location = useLocation();
 
   return (
@@ -17,7 +21,7 @@ const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
       backgroundSize="cover"
       backgroundPosition="50% 50%"
       listStyleType={'none'}
-      backgroundImage={`url(${image})`}
+      backgroundImage={`url(${images[index]})`}
       transitionProperty="filter"
       transitionDuration="0.5s"
       transitionTimingFunction="ease-in-out"
@@ -96,6 +100,7 @@ EventsItem.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
+  index: PropTypes.number,
 };
 
 export default EventsItem;

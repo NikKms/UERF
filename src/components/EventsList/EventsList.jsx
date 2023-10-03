@@ -27,8 +27,8 @@ const EventsList = () => {
             gap={6}
             rowGap={50}
           >
-            {eventShort.map(event => (
-              <EventsItem key={event.id} event={event} />
+            {eventShort.map((event, index) => (
+              <EventsItem key={event.id} event={event} index={index} />
             ))}
           </Grid>
         </Box>

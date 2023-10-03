@@ -15,6 +15,13 @@ import { useRef } from 'react';
 import './eventInfo.css';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
+import meeting from '../../assets/img/meeting.jpg';
+import logo from '../../assets/svg/forum-logo.svg';
+
+const images = [
+  { id: '01', img: logo },
+  { id: '02', img: meeting },
+];
 
 const EventInfo = () => {
   const { id } = useParams();
@@ -27,6 +34,8 @@ const EventInfo = () => {
   });
 
   const selectedEvent = eventFullInfo.find(event => event.id === id);
+  const selectedImg = images.find(img => img.id === id);
+
   return (
     <>
       <Box as="section" paddingTop="100px" paddingBottom="70px">
@@ -54,7 +63,7 @@ const EventInfo = () => {
               marginBottom={{ base: '20px', lg: '0' }}
               width="600px"
               max-height="400px"
-              src={selectedEvent.mainImg}
+              src={selectedImg.img}
               alt={selectedEvent.title}
             />
             <Box>
@@ -90,11 +99,7 @@ const EventInfo = () => {
           </Box>
         </Container>
       </Box>
-      {selectedEvent.imagesSlider ? (
-        <EventSlider key={selectedEvent.id} data={selectedEvent} />
-      ) : (
-        <ApplicationSection />
-      )}
+      {selectedEvent.imagesSlider ? <EventSlider /> : <ApplicationSection />}
     </>
   );
 };
