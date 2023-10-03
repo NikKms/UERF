@@ -85,7 +85,7 @@ export const ContactForm = () => {
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
-                    isInvalid={errors.name}
+                    isInvalid={!!errors.name && touched.name}
                   >
                     {/* <FormLabel>{t('contactForm.name')}</FormLabel> */}
                     <Input
@@ -107,7 +107,7 @@ export const ContactForm = () => {
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
-                    isInvalid={errors.phone}
+                    isInvalid={!!errors.phone && touched.phone}
                   >
                     {/* <FormLabel>Телефон *</FormLabel> */}
                     <Input
@@ -130,7 +130,7 @@ export const ContactForm = () => {
                       sm: 'calc((100% - 30px) / 2)',
                       lg: 'calc((100% - 60px) / 3)',
                     }}
-                    isInvalid={errors.email}
+                    isInvalid={!!errors.email && touched.email}
                   >
                     {/* <FormLabel>E-mail *</FormLabel> */}
                     <Input
