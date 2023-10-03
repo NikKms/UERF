@@ -13,6 +13,10 @@ const NewsList = () => {
   });
 
   useEffect(() => {
+    setHashIdx(parseInt(window.location.hash.substring(1), 10));
+  }, []);
+
+  useEffect(() => {
     if (!isNaN(hashIdx) && hashIdx >= 0 && hashIdx <= posts.length) {
       const element = document.getElementById(hashIdx.toString());
       if (element) {
