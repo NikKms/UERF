@@ -1,0 +1,8 @@
+.styledLinkBack {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  color: #319795;
+  margin-bottom: 10px;
+}

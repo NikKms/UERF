@@ -20,8 +20,6 @@ const Header = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-
-
   return (
     <Box
       as="header"
@@ -29,7 +27,7 @@ const Header = () => {
       w="100%"
       position={'fixed'}
       height={'80px'}
-      zIndex={'5'}
+      zIndex={'10'}
       bg={
         'linear-gradient(180deg, rgba(11,102,147,0.7533514626553747) 24%, rgba(214,209,7,0.4732394178374475) 80%, rgba(217,217,217,0) 100%)'
       }

@@ -13,9 +13,15 @@ import { Navigation } from 'swiper/modules';
 
 import { postsData } from '../../common/data/postsData';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { useTranslation } from 'react-i18next';
 
 const PostsSection = () => {
-  const gradient = 'linear-gradient(-45deg, #4bc32d97, #fdfeff9f)';
+  const { t } = useTranslation();
+  const posts = t('newsPage.newsData', {
+    returnObjects: true,
+  });
+
+  const gradient = 'linear-gradient(-45deg,#fdfeff9f, #4bc32d97)';
 
   return (
     <>
@@ -35,7 +41,7 @@ const PostsSection = () => {
             fontWeight="bold"
             color={'black'}
           >
-            Ecosystem of care: from creation to action
+            {t('newsPage.title')}
           </Heading>
           <Swiper
             className="mySwiper2"
@@ -61,17 +67,18 @@ const PostsSection = () => {
             }}
             modules={[Navigation]}
           >
-            {postsData.length > 0 &&
-              postsData.map(({ image, title, text }, index) => (
+            {posts.length > 0 &&
+              postsData.length > 0 &&
+              posts.map(({ title }, index) => (
                 <SwiperSlide key={index}>
                   <Box
                     shadow={'dark-lg'}
                     position={'relative'}
                     as="li"
-                    borderRadius={'4px'}
+                    borderRadius={'10px'}
                     overflow="hidden"
                     css={{
-                      '&:hover div': {
+                      '&:hover .news_card': {
                         transform: 'scale(1.03)',
                         transition: 'all 500ms, filter 500ms ease-in-out',
                         filter: 'brightness(100%)',
@@ -80,13 +87,16 @@ const PostsSection = () => {
                   >
                     <ChakraLink
                       as={ReactRouterLink}
-                      to="/news"
+                      to={`/news#${index}`}
                       display={'block'}
                       textAlign={'center'}
-                      color={'#fff'}
+                      color={'#ffffffc2'}
                       fontSize={'24px'}
+                      borderRadius={'10px'}
                     >
                       <Box
+                        borderRadius={'10px'}
+                        className="news_card"
                         filter="brightness(80%)"
                         position="relative"
                         z-index="2"
@@ -94,7 +104,7 @@ const PostsSection = () => {
                         height="260px"
                         transition="all 500ms cubic-bezier(0.4, 0, 0.2, 1)"
                         as="div"
-                        bgImage={`url(${image})`}
+                        bgImage={`url(${postsData[index].image})`}
                         bgRepeat={'no-repeat'}
                         bgPos={'center'}
                         bgSize={'cover'}
@@ -105,6 +115,7 @@ const PostsSection = () => {
                         }}
                       ></Box>
                       <Box
+                        borderRadius={'10px'}
                         as="div"
                         bg="linear-gradient(
     0deg,
@@ -128,16 +139,12 @@ const PostsSection = () => {
                           {title}
                         </Heading>
                       </Box>
-                      {/* <Text>
-                      {text.split('\n').map((paragraph, paraIndex) => (
-                        <p key={paraIndex}>{paragraph}</p>
-                      ))}
-                    </Text> */}
                     </ChakraLink>
                   </Box>
                 </SwiperSlide>
               ))}
           </Swiper>
+
           <ChakraLink
             mt={'20px'}
             as={ReactRouterLink}
@@ -149,7 +156,7 @@ const PostsSection = () => {
             textDecor={'underline'}
             _hover={{ color: '#00000067' }}
           >
-            Check more news
+            {t('newsPage.underButton')}
             <ExternalLinkIcon mx="2px" />
           </ChakraLink>
         </Container>
@@ -159,76 +166,3 @@ const PostsSection = () => {
 };
 
 export default PostsSection;
-
-{
-  /* <AccordionItem
-                      position="relative"
-                      overflow="hidden"
-                      border="none"
-                      borderRadius="10px"
-                      maxW={{ base: '100%', lg: '768px', xl: '1024px' }}
-                      margin={'50px auto'}
-                      // css={{
-                      //   '&::-webkit-scrollbar': {
-                      //     width: '3px',
-                      //   },
-                      //   '&::-webkit-scrollbar-thumb': {
-                      //     backgroundColor: '#fff',
-                      //     borderRadius: '50%',
-                      //   },
-                      // }}
-                      boxShadow={'lg'}
-                    >
-                      <h3>
-                        <AccordionButton
-                          bgColor="#f2e1c1"
-                          _hover={{ bgColor: '#d4b174', color: '#fff' }}
-                          _active={{ bgColor: '#d4b174', color: '#fff' }}
-                          _focus={{ bgColor: '#d4b174', color: '#fff' }}
-                        >
-                          <Box
-                            as="span"
-                            flex="1"
-                            textAlign="left"
-                            fontWeight="600"
-                            fontSize="24px"
-                          >
-                            {title}
-                          </Box>
-                          <AccordionIcon fontSize={'2.25rem'} />
-                        </AccordionButton>
-                      </h3>
-
-                      <AccordionPanel
-                        pb={4}
-                        opacity={'0.9'}
-                        borderBottomRadius="10px"
-                        color="#fff"
-                      >
-                        {text.split('\n').map((paragraph, paraIndex) => (
-                          <p key={paraIndex}>{paragraph}</p>
-                        ))}
-
-                        <Box
-                          w={'100%'}
-                          h={'100%'}
-                          blur={'2px'}
-                          filter={'auto'}
-                          bgColor={'blackAlpha.200'}
-                          position={'absolute'}
-                          top={'0'}
-                          left={'0'}
-                          borderBottomRadius={'10px'}
-                        />
-                      </AccordionPanel>
-                      <Box
-                        width="100%"
-                        height="480px"
-                        as="div"
-                        bgImage={`url(${image})`}
-                        bgRepeat={'no-repeat'}
-                        bgPos={'center'}
-                        bgSize={'cover'}
-                      ></Box>
-                    </AccordionItem> */
-}

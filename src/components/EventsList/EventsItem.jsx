@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
   const location = useLocation();
-  console.log(image);
+
   return (
     <GridItem
       as={'li'}
@@ -15,7 +15,6 @@ const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
       paddingLeft="30px"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
-      backgroundAttachment="scroll"
       backgroundPosition="50% 50%"
       listStyleType={'none'}
       backgroundImage={`url(${image})`}
@@ -78,7 +77,6 @@ const EventsItem = ({ event: { id, timeAndPlace, title, image } }) => {
           <Heading
             as="h3"
             color="#ffffff"
-            textTransform="capitalize"
             fontSize="32px"
             lineHeight="40px"
             fontWeight="700"

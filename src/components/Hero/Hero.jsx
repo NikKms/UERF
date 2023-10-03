@@ -7,7 +7,7 @@ import { ContactForm } from '../ContactForm/ContactForm';
 import { ForumIcon } from '../../common/icons/ForumIcon';
 import { useTranslation } from 'react-i18next';
 
-const Hero = () => {
+const Hero = ({ handleClick }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { t } = useTranslation();
 
@@ -17,12 +17,12 @@ const Hero = () => {
         <Heading mb="5" color="#fff">
           {t('homePage.hero.title')}
         </Heading>
-        <HeroBtn icon={<ForumIcon />} onClick={onOpen} />
+        <HeroBtn icon={<ForumIcon />} onClick={handleClick} />
       </Box>
       <Slider data={heroBgArr} />
-      <ModalContact isOpen={isOpen} onClose={onClose}>
+      {/* <ModalContact isOpen={isOpen} onClose={onClose}>
         <ContactForm />
-      </ModalContact>
+      </ModalContact> */}
     </section>
   );
 };

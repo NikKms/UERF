@@ -5,6 +5,8 @@ import bgHero1 from '../../assets/img/1.jpg';
 import bgHero2 from '../../assets/img/2.jpg';
 import bgHero3 from '../../assets/img/3.jpg';
 import bgHero4 from '../../assets/img/4.jpg';
+import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 const photoArr = [
   {
@@ -48,49 +50,48 @@ const aboutVariants = {
 };
 
 const AboutProblemsList = () => {
-  // const { t, i18n } = useTranslation();
-  // const [arr, setArr] = useState(photoArr);
-  // const [languageKey, setLanguageKey] = useState(i18n.language);
+  const { t, i18n } = useTranslation();
+  const [arr, setArr] = useState(photoArr);
+  const [languageKey, setLanguageKey] = useState(i18n.language);
 
-  // useEffect(() => {
-  //   // eslint-disable-next-line react/prop-types
-  //   const newArr = [
-  //     {
-  //       url: bgHero1,
-  //       title: t('aboutPage.solutions.list.forest.title'),
-  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  //     },
-  //     {
-  //       url: bgHero2,
-  //       title: t('aboutPage.solutions.list.water.title'),
-  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  //     },
-  //     {
-  //       url: bgHero3,
-  //       title: t('aboutPage.solutions.list.animals.title'),
-  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  //     },
-  //     {
-  //       url: bgHero4,
-  //       title: t('aboutPage.solutions.list.eco.title'),
-  //       text: 'Ea putant mandamus splendide mei, no ius tamquam iudicabit legendos cum natoque ne.',
-  //     },
-  //   ];
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    const newArr = [
+      {
+        url: bgHero1,
+        title: t('aboutPage.solutions.list.forest.title'),
+        text: t('aboutPage.solutions.list.forest.text'),
+      },
+      {
+        url: bgHero2,
+        title: t('aboutPage.solutions.list.water.title'),
+        text: t('aboutPage.solutions.list.water.text'),
+      },
+      {
+        url: bgHero3,
+        title: t('aboutPage.solutions.list.animals.title'),
+        text: t('aboutPage.solutions.list.animals.text'),
+      },
+      {
+        url: bgHero4,
+        title: t('aboutPage.solutions.list.eco.title'),
+        text: t('aboutPage.solutions.list.eco.text'),
+      },
+    ];
 
-  //   setArr(newArr);
-  //   setLanguageKey(i18n.language);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [t, i18n.resolvedLanguage]);
+    setArr(newArr);
+    setLanguageKey(i18n.language);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [t, i18n.resolvedLanguage]);
 
   return (
-    <AnimateOnScroll>
+    <AnimateOnScroll key={languageKey}>
       <Grid
         as={motion.ul}
-        // key={languageKey}
         templateColumns={{ base: '1fr', lg: 'repeat(4, 1fr)' }}
         gap={'2rem'}
       >
-        {photoArr.map(el => (
+        {arr.map(el => (
           <GridItem
             as={motion.li}
             variants={aboutVariants}
