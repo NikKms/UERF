@@ -1,26 +1,27 @@
 import { Box, Container, Heading, Image, VStack } from '@chakra-ui/react';
 import { postsData } from '../../common/data/postsData';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const NewsList = () => {
+  const [hashIdx, setHashIdx] = useState(
+    parseInt(window.location.hash.substring(1), 10)
+  );
   const { t } = useTranslation();
   const posts = t('newsPage.newsData', {
     returnObjects: true,
   });
 
   useEffect(() => {
-    const hashIndex = parseInt(window.location.hash.substring(1), 10);
-
-    if (!isNaN(hashIndex) && hashIndex >= 0 && hashIndex < posts.length) {
-      const element = document.getElementById(hashIndex.toString());
+    if (!isNaN(hashIdx) && hashIdx >= 0 && hashIdx <= posts.length) {
+      const element = document.getElementById(hashIdx.toString());
       if (element) {
         element.scrollIntoView({
           behavior: 'smooth',
         });
       }
     }
-  }, [posts.length]);
+  }, [hashIdx, posts.length]);
   return (
     <Box
       as="section"
